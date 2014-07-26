@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" /><title>PEXSI - ESL - The Electronic Structure Library
+</title>
+<meta name="generator" content="MediaWiki 1.22.5" />
+<link rel="shortcut icon" href="../../../../misc/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../opensearch_desc.php" title="ESL (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="ESL Atom feed" href="http://esl.cecam.org/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=ext.math.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-editsection{display:none}
+/* cache key: wikidb:resourceloader:filter:minify-css:7:394962a5154c1418682b373f1cb33df1 */</style>
+
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PEXSI","wgTitle":"PEXSI","wgCurRevisionId":765,"wgRevisionId":765,"wgArticleId":18,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["ESL entries","Libraries","Solvers","Sparse matrices"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PEXSI","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,
+"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wikidb:resourceloader:filter:minify-js:7:cb60007850aedfaf5fc9f9722333b2eb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mediawiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PEXSI skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">PEXSI</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">From ESL</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="float: right; background: AliceBlue; padding: 10px; margin-left: 10px; margin-bottom: 10px; border-style: solid; border-width: 1px; width: 35%">
+<p><b>Source authors:</b>
+</p><p>Lin Lin, UC-Berkeley and LBNL, <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/">Homepage</a><br />
+Chao Yang, LBNL, <a rel="nofollow" target="_blank" class="external text" href="http://crd.lbl.gov/about/staff/amsc/scientific-computing-group-scg/chao-yang/">Homepage</a>
+</p><p><b>Responsible for the ESL entry:</b>
+</p><p><a href="../../../../articles/g/h/u/User:Ghuhs.html" title="User:Ghuhs">Georg Huhs</a>
+</p><p><b>License:</b> BSD modified by LBNL
+</p><p><b>Type of development:</b> external
+</p><p><b>Download:</b> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_download.html">Project page</a>
+</p>
+</div>
+<p><br />
+The <b>P</b>ole <b>EX</b>pansion and <b>S</b>elected <b>I</b>nversion method <b>PEXSI</b> 
+is a fast method for evaluating certain selected elements
+of a matrix function and can be used for solving the KS-equation without explicit diagonalization.  
+PEXSI is particularly advantageous for large systems since it reduces the computational effort to 
+</p>
+<ul>
+<li> <img class="mwe-math-fallback-png-inline tex" alt="{\mathcal  {O}}(N^{2})" src="../../../../../math/5/a/0/5a042d1f9927b25772c570cfbb47e811.png" /> for 3D systems
+</li>
+<li> <img class="mwe-math-fallback-png-inline tex" alt="{\mathcal  {O}}(N^{{3/2}})" src="../../../../../math/0/1/2/012bd7e440d231791dc90f9b25cfbc9f.png" /> for (quasi-) 2D systems
+</li>
+<li> <img class="mwe-math-fallback-png-inline tex" alt="{\mathcal  {O}}(N)" src="../../../../../math/e/3/e/e3e85a10a3e7c2636dc7784f9f02f287.png" /> for (quasi-) 1D systems
+</li>
+</ul>
+<p>Furthermore it is highly scalable on distributed memory parallel machines. 
+</p><p><br />
+The <b>Selected Inversion</b> by itself can be used for calculating specific elements of the inverse of a sparse matrix. 
+</p><p><br />
+Most of the following documentation originates from the <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi">PEXSI-homepage</a>.
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Theory"><span class="tocnumber">1</span> <span class="toctext">Theory</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Basics"><span class="tocnumber">1.1</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Application_to_electronic_structure_calculations"><span class="tocnumber">1.2</span> <span class="toctext">Application to electronic structure calculations</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Parallelization"><span class="tocnumber">1.3</span> <span class="toctext">Parallelization</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Authors"><span class="tocnumber">2</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#License"><span class="tocnumber">4</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Download"><span class="tocnumber">5</span> <span class="toctext">Download</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Installation"><span class="tocnumber">6</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Prerequisites"><span class="tocnumber">6.1</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Instructions"><span class="tocnumber">6.2</span> <span class="toctext">Instructions</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Tests"><span class="tocnumber">6.3</span> <span class="toctext">Tests</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Programming_interface"><span class="tocnumber">7</span> <span class="toctext">Programming interface</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Further_information"><span class="tocnumber">8</span> <span class="toctext">Further information</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Future_developments"><span class="tocnumber">9</span> <span class="toctext">Future developments</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Theory">Theory</span></h2>
+<h3><span class="mw-headline" id="Basics">Basics</span></h3>
+<p>Given a sparse square matrix <img class="mwe-math-fallback-png-inline tex" alt="A" src="../../../../../math/7/f/c/7fc56270e7a70fa81a5935b72eacbe29.png" /> and a certain function
+<img class="mwe-math-fallback-png-inline tex" alt="f(\cdot )" src="../../../../../math/a/1/0/a1044326f95cfbf46f9859c97cf280be.png" />, the basic idea of PEXSI is to
+expand <img class="mwe-math-fallback-png-inline tex" alt="f(A)" src="../../../../../math/f/a/1/fa1e95b77f0e486fa5738b876146cfec.png" /> using a small number of rational functions (pole expansion) 
+</p><p><img class="mwe-math-fallback-png-inline tex" alt="f(A)\approx \sum _{{l=1}}^{{P}}\omega _{l}(A-z_{l}I)^{{-1}}," src="../../../../../math/0/0/9/009aba64a2277102c724953ab9c6b379.png" />
+</p><p>and to efficiently evaluate <img class="mwe-math-fallback-png-inline tex" alt="f(A)_{{i,j}}" src="../../../../../math/f/2/9/f293f17b257686cad236499a7a2aaab8.png" /> by evaluating selected
+elements <img class="mwe-math-fallback-png-inline tex" alt="(A-z_{l}I)_{{i,j}}^{{-1}}" src="../../../../../math/0/4/9/049c6127786415e74c2b87307cc6e60c.png" /> (selected inversion).
+</p><p>The currently supported form of <img class="mwe-math-fallback-png-inline tex" alt="f(\cdot )" src="../../../../../math/a/1/0/a1044326f95cfbf46f9859c97cf280be.png" /> includes:
+</p>
+<ul>
+<li> <img class="mwe-math-fallback-png-inline tex" alt="f(z)=z^{{-1}}" src="../../../../../math/6/f/8/6f8c0d75ef9d8a989953bf15deb8fdcb.png" />: Matrix inversion.  Since the matrix inversion is already represented as a single term of rational function (pole), no pole expansion is needed.  The selected inversion method can be significantly faster than directly inverting the matrix and then extract the selected elements of the inverse. 
+</li>
+</ul>
+<ul>
+<li> <img class="mwe-math-fallback-png-inline tex" alt="f(z)={\frac  {2}{1+e^{{\beta (z-\mu )}}}}" src="../../../../../math/4/4/c/44c5cb4260b08a26b898409a2bc311e5.png" />: Fermi-Dirac function.  This can be used as a "smeared" matrix sign function at <img class="mwe-math-fallback-png-inline tex" alt="z=\mu " src="../../../../../math/e/f/8/ef8e25f664911107942c04429323741a.png" />, without assuming a spectral gap near <img class="mwe-math-fallback-png-inline tex" alt="z=\mu " src="../../../../../math/e/f/8/ef8e25f664911107942c04429323741a.png" />.  This can be used for evaluating the electron density for electronic structure calculation. 
+</li>
+</ul>
+<div class="center"><div class="floatnone"><a href="../../../../articles/f/e/r/File:FermiDirac.png.html" class="image" title="Red: Fermi-Dirac function. Black: Matrix sign function"><img alt="Red: Fermi-Dirac function. Black: Matrix sign function" src="../../../../../images/e/2F/e/e/ec/FermiDirac.png" width="262" height="166" /></a></div></div>
+<p>For sparse matrices, the PEXSI method can be more efficient than the widely used
+diagonalization method for evaluating matrix
+functions, especially when a relatively large number of eigenpairs are
+needed to be computed in the diagonalization method.  
+</p>
+<h3><span class="mw-headline" id="Application_to_electronic_structure_calculations">Application to electronic structure calculations</span></h3>
+<p>PEXSI can be used to solve the generalized eigenvalue problem that has to be solved in each SCF-iteration of the KS-DFT formalism without explicit diagonalization. Instead the density matrix is computed directly. Other magnitudes (free energy, atomic forces, local density of states) are given by the same formalism with negligible effort. The PEXSI framework can also be used for calculating the total density of states very efficiently. 
+</p><p>With the pole expansion of the Fermi function
+</p><p><img class="mwe-math-fallback-png-inline tex" alt="f(\varepsilon -\mu )\approx \Im \sum _{{l=1}}^{{P}}{\frac  {\omega _{l}^{{\rho }}}{\varepsilon -(z_{l}+\mu )}}" src="../../../../../math/9/c/2/9c20bf03cee2dc8c58ef71e6fcba0151.png" />
+</p><p>the density matrix (in case of a non-orthogonal basis) becomes
+</p><p><img class="mwe-math-fallback-png-inline tex" alt="{\rho }_{{P}}=\Im \left(\sum _{{l=1}}^{{P}}{\frac  {\omega _{l}}{H-(z_{l}+\mu )S}}\right)" src="../../../../../math/8/e/c/8ec62f1ac79c9930bd5542c3636e5dd9.png" />
+</p><p><br />
+The chemical potential <img class="mwe-math-fallback-png-inline tex" alt="\mu " src="../../../../../math/b/7/2/b72bb92668acc30b4474caff40274044.png" /> has to fulfill
+<img class="mwe-math-fallback-png-inline tex" alt="\int {\rho }(x)dx=N_{e}," src="../../../../../math/b/7/2/b72a5e08f2f998357a209d09e146e4a5.png" />  <br />
+with <img class="mwe-math-fallback-png-inline tex" alt="N_{e}" src="../../../../../math/a/a/4/aa40858b3b39e82656164d7719f9b312.png" /> the total number of electrons and <img class="mwe-math-fallback-png-inline tex" alt="{\rho }(x)" src="../../../../../math/3/7/1/371906fa67dc55b6be22db199dcfb1e0.png" /> the electron density in real space.
+</p><p>For finding <img class="mwe-math-fallback-png-inline tex" alt="\mu " src="../../../../../math/b/7/2/b72bb92668acc30b4474caff40274044.png" /> PEXSI implements a hybrid scheme, combining a bisection and a Newton method. This allows determining <img class="mwe-math-fallback-png-inline tex" alt="\mu " src="../../../../../math/b/7/2/b72bb92668acc30b4474caff40274044.png" /> in a few iterations, even when starting with a wide guess and for difficult cases. Systems with a gap are naturally even easier to solve. If there is a good guess for <img class="mwe-math-fallback-png-inline tex" alt="\mu " src="../../../../../math/b/7/2/b72bb92668acc30b4474caff40274044.png" /> available, for example from a previous SCF iteration, the bisection can be turned off. 
+</p><p>The PEXSI library provides two interfaces. A simple one, finding many of the parameters automatically, and another one offering extensive control of the behavior of the solver.
+</p><p>An extensive description of the implementation of PEXSI in the numerical atomic orbital code SIESTA can be found in <sup id="cite_ref-siesta-pexsi_1-0" class="reference"><a href="#cite_note-siesta-pexsi-1">[1]</a></sup>
+</p>
+<h3><span class="mw-headline" id="Parallelization">Parallelization</span></h3>
+<p>Besides the favorable weak scaling, PEXSI can also scale to large numbers of processors due to its two-level parallelism: 
+</p>
+<ol>
+<li> For accurate evaluation, the pole expansion usually takes 40-60 poles. The calculations on each of these poles are completely independent of each other, enabling an efficient parallelization on this level. 
+</li>
+<li> The calculations on each pole can also be parallelized, with the number of processors that can be used efficiently strongly depending on the problem size, the matrix sparsity, and the sparsity pattern. Typically tens up to thousands of processors per pole are used. An extensive description of the selected inversion and its parallelization can be found in <sup id="cite_ref-parallel-selected-inversion_2-0" class="reference"><a href="#cite_note-parallel-selected-inversion-2">[2]</a></sup>
+</li>
+</ol>
+<p>Large examples need a minimum amount of processors to have enough memory available. Typically this number is much smaller than with dense direct methods like ScaLAPACK.
+</p>
+<h2><span class="mw-headline" id="Authors">Authors</span></h2>
+<p><b>Library authors</b>
+</p>
+<ul>
+<li> Lin Lin, University of California - Berkeley and Lawrence Berkeley National Laboratory, <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/">Homepage</a>
+</li>
+<li> Chao Yang, Lawrence Berkeley National Laboratory, <a rel="nofollow" target="_blank" class="external text" href="http://crd.lbl.gov/about/staff/amsc/scientific-computing-group-scg/chao-yang/">Homepage</a>
+</li>
+</ul>
+<p><b>Responsible for ESL entry</b>
+</p>
+<ul>
+<li> <a href="../../../../articles/g/h/u/User:Ghuhs.html" title="User:Ghuhs">Georg Huhs</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Publications">Publications</span></h2>
+<ul>
+<li> Implementation of PEXSI into SIESTA<sup id="cite_ref-siesta-pexsi_1-1" class="reference"><a href="#cite_note-siesta-pexsi-1">[1]</a></sup> 
+</li>
+<li> PEXSI <sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup>
+</li>
+<li> (Parallel) Selected Inversion <sup id="cite_ref-parallel-selected-inversion_2-1" class="reference"><a href="#cite_note-parallel-selected-inversion-2">[2]</a></sup> <sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup> <sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup> <sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup>
+</li>
+<li> Pole Expansion <sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup>
+</li>
+</ul>
+<h2><span class="mw-headline" id="License">License</span></h2>
+<p>PEXSI is distributed under BSD license (modified by Lawrence Berkeley National Laboratory). 
+</p><p><a href="../../../../articles/p/e/x/PEXSI_-_License.html" title="PEXSI - License">License text</a>
+</p>
+<h2><span class="mw-headline" id="Download">Download</span></h2>
+<p>A source tarball can be downloaded directly from 
+<a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/download/download.php?file=pexsi_v0.7.1.tar.gz">here</a>.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Prerequisites">Prerequisites</span></h3>
+<ul>
+<li> LAPACK for basic linear algebra operations
+</li>
+<li> MPI
+</li>
+<li> SuperLU-Dist (<a rel="nofollow" target="_blank" class="external text" href="http://crd-legacy.lbl.gov/~xiaoye/SuperLU/superlu_dist_3.3.tar.gz">download</a>) 
+</li>
+<li> ParMetis (<a rel="nofollow" target="_blank" class="external text" href="http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.2.tar.gz">download</a>) or PT-Scotch (<a rel="nofollow" target="_blank" class="external text" href="https://gforge.inria.fr/frs/download.php/31831/scotch_6.0.0.tar.gz">download</a>)
+</li>
+</ul>
+<p>PEXSI requires an external parallel <img class="mwe-math-fallback-png-inline tex" alt="LU" src="../../../../../math/9/2/0/920d0c66f3d2ad926a6d590a5d244bd9.png" /> factorization or <img class="mwe-math-fallback-png-inline tex" alt="LDL^{T}" src="../../../../../math/c/2/b/c2ba0d59b5ff2a5576657b5e1d6780de.png" /> factorization routine, and an external parallel matrix reordering routine to reduce the fill-in of the factorization routine. <br />
+Currently we use SuperLU_DIST for the parallel <img class="mwe-math-fallback-png-inline tex" alt="LU" src="../../../../../math/9/2/0/920d0c66f3d2ad926a6d590a5d244bd9.png" /> factorization, and ParMETIS for the parallel fill-in reducing reordering. It is also possible to use PT-Scotch for the reordering. But we recommend to first download ParMETIS.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Instructions">Instructions</span></h3>
+<p><b>Edit <tt>make.inc</tt></b>
+</p><p>Configuration of PEXSI is controlled by a single <tt>make.inc</tt> file. Examples of the <tt>make.inc</tt> file are given under the <tt>config/</tt> directory.
+</p><p>Find <tt>make.inc</tt> with the most similar architecture, and copy to the main PEXSI directory (using Edison for example, the latest Intel computer at NERSC). <tt>${PEXSI_DIR}</tt> stands for the main directory of PEXSI.
+</p>
+<pre> cd ${PEXSI_DIR}
+ cp config/make.inc.edison.intel make.inc
+</pre>
+<p>Edit the variables in <tt>make.inc</tt>
+</p>
+<pre> PEXSI_DIR     = Main directory for PEXSI
+ DSUPERLU_DIR  = Main directory for SuperLU_DIST
+ METIS_DIR     = Main directory for METIS
+ PARMETIS_DIR  = Main directory for ParMETIS 
+ PTSCOTCH_DIR  = Main directory for PT-Scotch
+</pre>
+<p>Note:<br />
+PEXSI can be compiled using debug or release mode in by the variable <tt>COMPILE_MODE</tt> in <tt>make.inc</tt>. This variable mainly controls the compiling flag <tt>-DRELEASE</tt>. The debug mode introduces tracing of call stacks at all levels of functions, and may significantly slow down the code. For production runs, use release mode.
+The <tt>*.profile</tt> configuration files are for debugging purpose and can be ignored.
+</p><p><b>Build the PEXSI library</b>
+</p><p>If <tt>make.inc</tt> is configured correctly,
+</p>
+<pre> cd ${PEXSI_DIR}
+ cd src
+ make
+</pre>
+<p>should produce <tt>libpexsi_(suffix).a</tt> under <tt>src/</tt>.
+</p>
+<h3><span class="mw-headline" id="Tests">Tests</span></h3>
+<p><b>Build examples</b>
+</p><p>After <tt>libpexsi_(suffix).a</tt> is built, all driver routines are readily to be compiled. For example, the selected inversion for a complex matrix has the test routine
+</p>
+<pre> cd ${PEXSI_DIR}
+ cd examples
+ make driver_pselinv_complex
+</pre>
+<p>should produce <tt>driver_pselinv_complex</tt>, which can be executed with MPI.
+</p><p>For more information on the examples, see Tutorial.
+</p><p><b>Run tests</b>
+</p><p>After <tt>driver_pselinv_complex</tt> is compiled,
+</p>
+<pre> examples$ mpirun -n 1 ./driver_pselinv_complex
+</pre>
+<p>should return the diagonal of the matrix
+</p><p><img class="mwe-math-fallback-png-inline tex" alt="(A+iI)^{{-1}}" src="../../../../../math/d/1/9/d1970ef52342934b36e7943bc6cf876b.png" />
+</p><p>saved on the 0-th processor, where A is the five-point discretization of a Laplacian operator on a 2D domain. The result can be compared with <tt>examples/driver_pselinv_complex.out</tt> to check the correctness of the result.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Programming_interface">Programming interface</span></h2>
+<p>The full documentation of the C/C++ and Fortran interfaces can be found on the project's page: 
+</p>
+<ul>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/c__pexsi__interface_8h.html">C/C++ interface</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/f__interface_8f90.html">Fortran interface</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Further_information">Further information</span></h2>
+<p>The <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/"><b>Homepage</b></a> contains: 
+</p>
+<ul>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_intro.html">Introduction</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_download.html">Download</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_install.html">Installation</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_tutorial.html">Tutorial</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_core_function.html">Core Functionality</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_f_a_q.html">Frequently asked questions</a>
+</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://math.berkeley.edu/~linlin/pexsi/page_trouble.html">Troubleshooting</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Future_developments">Future developments</span></h2>
+<ul>
+<li> Generalization for k-points
+</li>
+<li> MPI-OpenMP hybrid version
+</li>
+<li> Port to Intel MIC
+</li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<ol class="references">
+<li id="cite_note-siesta-pexsi-1"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-siesta-pexsi_1-0">1.0</a></sup> <sup><a href="#cite_ref-siesta-pexsi_1-1">1.1</a></sup></span> <span class="reference-text">L. Lin, A. Garcia, G. Huhs and C. Yang, SIESTA-PEXSI: Massively parallel
+method for efficient and accurate ab initio materials simulation without
+matrix diagonalization, <a rel="nofollow" target="_blank" class="external text" href="http://arxiv.org/abs/1405.0194">arXiv</a></span>
+</li>
+<li id="cite_note-parallel-selected-inversion-2"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-parallel-selected-inversion_2-0">2.0</a></sup> <sup><a href="#cite_ref-parallel-selected-inversion_2-1">2.1</a></sup></span> <span class="reference-text">M. Jacquelin, L. Lin and C. Yang, PSelInv -- A Distributed Memory
+Parallel Algorithm for Selected Inversion&#160;: the Symmetric Case
+<a rel="nofollow" target="_blank" class="external text" href="http://arxiv.org/abs/1404.0447">arXiv</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">L. Lin, M. Chen, C. Yang and L. He, Accelerating atomic
+orbital-based electronic structure calculation via pole expansion
+and selected inversion, J. Phys. Condens. Matter 25, 295501, 2013 
+<a rel="nofollow" target="_blank" class="external text" href="http://dx.doi.org/10.1088/0953-8984/25/29/295501">journal</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">L. Lin, C. Yang, J. Meza, J. Lu, L. Ying and W. E, SelInv -- An
+algorithm for selected inversion of a sparse symmetric matrix, ACM
+Trans. Math. Software 37, 40, 2011
+<a rel="nofollow" target="_blank" class="external text" href="http://doi.acm.org/10.1145/1916461.1916464">journal</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">L. Lin, C. Yang, J. Lu, L. Ying and W. E, A Fast  Parallel
+algorithm for selected inversion of structured sparse matrices with
+application to 2D electronic structure
+calculations, SIAM J. Sci. Comput. 33, 1329, 2011 
+<a rel="nofollow" target="_blank" class="external text" href="http://dx.doi.org/10.1137/09077432X">journal</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">L. Lin, J. Lu, L. Ying, R. Car and W. E, Fast algorithm for
+extracting the diagonal of the inverse matrix with application to
+the electronic structure analysis of metallic systems, 
+Commun. Math. Sci. 7, 755, 2009
+<a rel="nofollow" target="_blank" class="external text" href="http://projecteuclid.org/euclid.cms/1256562822">journal</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text">L. Lin, J. Lu, L. Ying and W. E, Pole-based approximation of the
+Fermi-Dirac function, Chin. Ann. Math. 30B, 729, 2009 
+<a rel="nofollow" target="_blank" class="external text" href="http://dx.doi.org/10.1007/s11401-009-0201-7">journal</a></span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.184 seconds
+Real time usage: 0.332 seconds
+Preprocessor visited node count: 500/1000000
+Preprocessor generated node count: 1354/1000000
+Post‐expand include size: 602/2097152 bytes
+Template argument size: 311/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;oldid=765">http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;oldid=765</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li><li><a href="../../../../articles/s/o/l/Category:Solvers.html" title="Category:Solvers">Solvers</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Sparse_matrices&amp;action=edit&amp;redlink=1" class="new" title="Category:Sparse matrices (page does not exist)">Sparse matrices</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=PEXSI&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=PEXSI" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="../../../../articles/p/e/x/PEXSI.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:PEXSI&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="../../../../articles/p/e/x/PEXSI.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="/mediawiki/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" placeholder="Search" title="Search ESL [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../skins/vector/images/search-ltr.png?303" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../../../../misc/esl_wiki_logo.png);" href="../../../../index.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../../../../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+			<li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+			<li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+			<li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+			<li id="n-recentchanges"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" rel="nofollow" target="_blank" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://esl.cecam.org/mediawiki/index.php/Special:WhatLinksHere/PEXSI" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChangesLinked/PEXSI" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://esl.cecam.org/mediawiki/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;oldid=765" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://esl.cecam.org/mediawiki/index.php?title=PEXSI&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-credits">This page was last modified 14:40, 24 July 2014 by <a href="../../../../articles/f/a/b/User:Fabiano.corsetti.html" title="User:Fabiano.corsetti">Fabiano Corsetti</a>. Based on work by <a href="../../../../articles/e/a/r/User:Eartacho.html" title="User:Eartacho">Emilio Artacho</a> and <a href="../../../../articles/g/h/u/User:Ghuhs.html" title="User:Ghuhs">Georg Huhs</a> and ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Admin&amp;action=edit&amp;redlink=1" class="new" title="User:Admin (page does not exist)">Admin</a>.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../../../../articles/p/r/i/ESL:Privacy_policy.html" title="ESL:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>
+											<li id="footer-places-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served in 1.786 secs. -->
+	</body>
+</html>

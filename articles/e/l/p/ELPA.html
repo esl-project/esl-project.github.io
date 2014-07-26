@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" /><title>ELPA - ESL - The Electronic Structure Library
+</title>
+<meta name="generator" content="MediaWiki 1.22.5" />
+<link rel="shortcut icon" href="../../../../misc/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../opensearch_desc.php" title="ESL (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="ESL Atom feed" href="http://esl.cecam.org/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=ext.math.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-editsection{display:none}
+/* cache key: wikidb:resourceloader:filter:minify-css:7:394962a5154c1418682b373f1cb33df1 */</style>
+
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ELPA","wgTitle":"ELPA","wgCurRevisionId":733,"wgRevisionId":733,"wgArticleId":21,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["ESL entries","Libraries","Solvers"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ELPA","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,
+"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wikidb:resourceloader:filter:minify-js:7:cb60007850aedfaf5fc9f9722333b2eb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-fortran {line-height: normal;}
+.source-fortran li, .source-fortran pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for fortran
+ * CSS class: source-fortran, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.fortran.source-fortran .de1, .fortran.source-fortran .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.fortran.source-fortran  {font-family:monospace;}
+.fortran.source-fortran .imp {font-weight: bold; color: red;}
+.fortran.source-fortran li, .fortran.source-fortran .li1 {font-weight: normal; vertical-align:top;}
+.fortran.source-fortran .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.fortran.source-fortran .li2 {font-weight: bold; vertical-align:top;}
+.fortran.source-fortran .kw1 {color: #b1b100;}
+.fortran.source-fortran .kw2 {color: #000000; font-weight: bold;}
+.fortran.source-fortran .kw3 {color: #000066;}
+.fortran.source-fortran .kw4 {color: #993333;}
+.fortran.source-fortran .co1 {color: #666666; font-style: italic;}
+.fortran.source-fortran .co2 {color: #339933;}
+.fortran.source-fortran .coMULTI {color: #808080; font-style: italic;}
+.fortran.source-fortran .es0 {color: #000099; font-weight: bold;}
+.fortran.source-fortran .br0 {color: #009900;}
+.fortran.source-fortran .sy0 {color: #339933;}
+.fortran.source-fortran .st0 {color: #ff0000;}
+.fortran.source-fortran .nu0 {color: #cc66cc;}
+.fortran.source-fortran .me1 {color: #202020;}
+.fortran.source-fortran .me2 {color: #202020;}
+.fortran.source-fortran .ln-xtra, .fortran.source-fortran li.ln-xtra, .fortran.source-fortran div.ln-xtra {background-color: #ffc;}
+.fortran.source-fortran span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mediawiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-ELPA skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">ELPA</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">From ESL</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="float: right; background: AliceBlue; padding: 10px; margin-left: 10px; margin-bottom: 10px; border-style: solid; border-width: 1px; width: 35%">
+<p><b>Source authors:</b>
+</p><p><a rel="nofollow" target="_blank" class="external text" href="http://elpa.rzg.mpg.de/">ELPA Consortium</a> (external homepage)
+</p><p><b>Responsible for the ESL entry:</b>
+</p><p><a href="http://esl.cecam.org/mediawiki/index.php?title=User:Jan.kloppenburg&amp;action=edit&amp;redlink=1" class="new" title="User:Jan.kloppenburg (page does not exist)">J. Kloppenburg</a> (wiki user page)
+</p><p><b>License:</b> <a rel="nofollow" target="_blank" class="external text" href="https://www.gnu.org/copyleft/lesser.html/">LGPL</a>
+</p><p><b>Type of development:</b> External
+</p><p><b>Download:</b> <a rel="nofollow" target="_blank" class="external text" href="http://elpa.rzg.mpg.de/">download</a> tar.gz here]
+</p>
+</div>
+<p><b>ELPA: Eigenvalue SoLver for Petaflop Applications</b>
+</p><p>ELPA is a Fortran-based high-performance computational library for the massively parallel solution of symmetric or Hermitian, standard or generalized eigenvalue problems.
+</p><p>On a single core there are standard libraries available that implement the usual mathematical way to solve the problem numerically. For massively parallel supercomputer applications this problem is non-trivial because of the neccassary communication involved. The ELPA library was developed to improve performance of already existing implementations which are available in scalapack which is also distributed by the <a rel="nofollow" target="_blank" class="external text" href="http://www.netlib.org">netlib</a> website that provides lapack among many other numerical libraries.<br />
+The original ELPA Library was created by the <a rel="nofollow" target="_blank" class="external text" href="http://elpa.rzg.mpg.de/">ELPA</a> consortium, a collaborative effort supported by the German Federal Ministry of Education and Research <a rel="nofollow" target="_blank" class="external text" href="http://www.bmbf.de/en/">BMBF</a>, grant number 01IH08007.
+</p>
+<table align="right">
+<tr>
+<td><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Publications"><span class="tocnumber">1</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Prerequisites"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Installation"><span class="tocnumber">3</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Testing"><span class="tocnumber">4</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Interface_descriptions"><span class="tocnumber">5</span> <span class="toctext">Interface descriptions</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+</td></tr></table>
+<h2><span class="mw-headline" id="Publications">Publications</span></h2>
+<p>The latest publication concerning ELPA can be found here
+<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>.
+</p>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span></h2>
+<p>The lapack and scalapack libraries from the <a rel="nofollow" target="_blank" class="external text" href="http://www.netlib.org">netlib</a> website are a minimal requirement. If you decide to use the Intel compilers you do not need an extra lapack+scalapack library since the Intel MKL is included in the usual distribution from Intel. Make sure to install the MKL scalapack librarires by selecting the 'cluster tools' option during the installation of Intel compilers since they are no longer installed automatically with versions 14+.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><b>1) GCC:</b>
+</p>
+<pre> a) Get the lapack and scalapack packages from <a rel="nofollow" target="_blank" class="external text" href="http://www.netlib.org">netlib</a> and install them into $YOUR_DIRECTORY.
+ b) In the console where you intend to build ELPA, enter export LIBS='-L$YOUR_DIRECTORY -lscalapack -llapack -lblas' and &lt;Enter&gt; it.
+ c) Extract ELPA archive, a subdirectory containing the files will be created.
+ d) Do ./configure --help and READ the options about kernels to build with ELPA, this choice will not be made for you, the most general choice 
+ is the generic kernel but there are also assembler code versions available for SSE, AVX and BG architectures.
+ e) ./configure --prefix=&lt;INSTALL_DIR&gt; --kernel_of_choice --disable-shared
+ f) make &amp;&amp; make install
+ g) For the linking of your program to use ELPA, remember to add the linking flags. The most easy way would be to add the library specification
+ '-L&lt;INSTALL_DIR&gt; -lelpa' to the final link line of your program source code build architecture. 
+</pre>
+<p><b>2) Intel:</b>
+</p>
+<pre> a) Extract ELPA archive, a subdirectory containing the files will be created.
+ b) Do ./configure --help and READ the options about kernels to build with ELPA, this choice will not be made for you, the most general choice
+ is the generic kernel but there are also assembler code versions available for SSE, AVX and BG architectures.
+ c) ./configure --prefix=&lt;INSTALL_DIR&gt; --kernel_of_choice 
+ d) make &amp;&amp; make install
+ e) For the linking of your program to use ELPA, remember to add the linking flags. The most easy way would be to add the library specification
+ '-L&lt;INSTALL_DIR&gt; -lelpa' to the final link line of your program source code build architecture.
+</pre>
+<h2><span class="mw-headline" id="Testing">Testing</span></h2>
+<p>With the usual installation of ELPA there will be small testing programs installed. They are called test_complex, test_complex2, test_real and test_real2, named by thier functionality. ELPA has a one-stage and a two-stage functionality and real and complex variable inputs/outputs and so the program names reflect the test to be run. 
+</p><p>One of these will be used here for illustrative purposes. The original file in the distribution contains some more functionality that has been removed here because it it not needed for demonstration purposes.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">program</span> test_real2
+ <span class="kw3">use</span> ELPA1
+ <span class="kw3">use</span> ELPA2</pre></div></div>
+<p>We define the name of the program and include the two ELPA libraries.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw3">implicit</span> <span class="kw3">none</span>
+ include <span class="st0">'mpif.h'</span></pre></div></div>
+<p>Make sure variable name typos are recognized as such and include the mpi fortran header which ELPA needs to set default values.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw3">integer</span> <span class="sy0">::</span> <span class="me2">nblk</span>
+ <span class="kw3">integer</span> na, nev
+ <span class="kw3">integer</span> np_rows, np_cols, na_rows, na_cols
+ <span class="kw3">integer</span> myid, nprocs, my_prow, my_pcol, mpi_comm_rows, mpi_comm_cols
+ <span class="kw3">integer</span> i, mpierr, my_blacs_ctxt, sc_desc<span class="br0">&#40;</span><span class="nu0">9</span><span class="br0">&#41;</span>, info, nprow, npcol
+ <span class="kw3">integer</span>, <span class="kw3">external</span> <span class="sy0">::</span> <span class="me2">numroc</span>
+ <span class="kw3">real</span><span class="sy0">*</span><span class="nu0">8</span> <span class="kw1">err</span>, errmax
+ <span class="kw3">real</span><span class="sy0">*</span><span class="nu0">8</span>, <span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">a</span><span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>, z<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>, tmp1<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>, tmp2<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>, as<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>, ev<span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span>
+ <span class="kw3">integer</span> <span class="sy0">::</span> <span class="me2">iseed</span><span class="br0">&#40;</span><span class="nu0">4096</span><span class="br0">&#41;</span> <span class="co1">! Random seed, size should be sufficient for every generator</span>
+ <span class="kw3">integer</span> <span class="sy0">::</span> <span class="kw1">STATUS</span></pre></div></div>
+<p>These are variable declarations as usually expected in source code.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> #ifdef WITH_OPENMP
+   <span class="kw3">integer</span> <span class="sy0">::</span> <span class="me2">omp_get_max_threads</span>,  required_mpi_thread_level, provided_mpi_thread_level
+ #endif</pre></div></div>
+<p>Add some more variables in case we use openmp.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> nblk <span class="sy0">=</span> <span class="nu0">16</span>
+ na <span class="sy0">=</span> <span class="nu0">4000</span>
+ nev <span class="sy0">=</span> <span class="nu0">1500</span></pre></div></div>
+<p>Set standard values for the scalapack block distribution (nblk), the matrix size (na) and the number of eigenvectors of interest (nev).
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1">#ifndef WITH_OPENMP
+  <span class="kw1">call</span> mpi_init<span class="br0">&#40;</span>mpierr<span class="br0">&#41;</span>
+#else
+ required_mpi_thread_level <span class="sy0">=</span> MPI_THREAD_MULTIPLE
+ <span class="kw1">call</span> mpi_init_thread<span class="br0">&#40;</span>required_mpi_thread_level, provided_mpi_thread_level, mpierr<span class="br0">&#41;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>required_mpi_thread_level <span class="kw2">.<span class="me1">ne</span>.</span> provided_mpi_thread_level<span class="br0">&#41;</span> <span class="kw1">then</span>
+   print <span class="sy0">*</span>,<span class="st0">&quot;MPI ERROR: MPI_THREAD_MULTIPLE is not provided on this system &quot;</span>, provided_mpi_thread_level,<span class="st0">&quot; is available&quot;</span>
+   <span class="kw1">call</span> <span class="kw1">EXIT</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+   <span class="kw1">stop</span>
+ <span class="kw1">endif</span>
+ #endif</pre></div></div>
+<p>More hooks for sanity checks to confirm we use either MPI or OpenMP.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> mpi_comm_rank<span class="br0">&#40;</span>mpi_comm_world,myid,mpierr<span class="br0">&#41;</span>
+ <span class="kw1">call</span> mpi_comm_size<span class="br0">&#40;</span>mpi_comm_world,nprocs,mpierr<span class="br0">&#41;</span></pre></div></div>
+<p>Initialize the MPI communicators.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">STATUS</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ #ifdef WITH_OPENMP
+   <span class="kw1">if</span> <span class="br0">&#40;</span>myid <span class="kw2">.<span class="me1">eq</span>.</span> <span class="nu0">0</span><span class="br0">&#41;</span> print <span class="sy0">*</span>,<span class="st0">&quot;Threaded version of test program, using &quot;</span>,omp_get_max_threads<span class="br0">&#40;</span><span class="br0">&#41;</span>,<span class="st0">&quot; threads&quot;</span>
+ #endif</pre></div></div>
+<p>Output for OpemMP thread number in case we use it.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">do</span> np_cols <span class="sy0">=</span> <span class="kw4">NINT</span><span class="br0">&#40;</span><span class="kw4">SQRT</span><span class="br0">&#40;</span><span class="kw3">REAL</span><span class="br0">&#40;</span>nprocs<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>,<span class="nu0">2</span>,<span class="sy0">-</span><span class="nu0">1</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw4">mod</span><span class="br0">&#40;</span>nprocs,np_cols<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="nu0">0</span> <span class="br0">&#41;</span> <span class="kw1">exit</span>
+ <span class="kw1">enddo</span></pre></div></div>
+<p>Selection of number of processor rows/columns. We try to set up the grid square-like, i.e. start the search for possible
+divisors of nprocs with a number next to the square root of nprocs and decrement it until a divisor is found.
+At the end of the above loop, nprocs is always divisible by np_cols.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> np_rows <span class="sy0">=</span> nprocs<span class="sy0">/</span>np_cols</pre></div></div>
+<p>Determine the number of processor rows.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">if</span><span class="br0">&#40;</span>myid<span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+   print <span class="st0">'(a)'</span>,<span class="st0">'Standard eigenvalue problem - REAL version'</span>
+   print <span class="st0">'(3(a,i0))'</span>,<span class="st0">'Matrix size='</span>,na,<span class="st0">', Number of eigenvectors='</span>,nev,<span class="st0">', Block size='</span>,nblk
+   print <span class="st0">'(3(a,i0))'</span>,<span class="st0">'Number of processor rows='</span>,np_rows,<span class="st0">', cols='</span>,np_cols,<span class="st0">', total='</span>,nprocs
+ <span class="kw1">endif</span></pre></div></div>
+<p>Let the master CPU state what has just been set up.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> my_blacs_ctxt <span class="sy0">=</span> mpi_comm_world
+ <span class="kw1">call</span> BLACS_Gridinit<span class="br0">&#40;</span> my_blacs_ctxt, <span class="st0">'C'</span>, np_rows, np_cols <span class="br0">&#41;</span>
+ <span class="kw1">call</span> BLACS_Gridinfo<span class="br0">&#40;</span> my_blacs_ctxt, nprow, npcol, my_prow, my_pcol <span class="br0">&#41;</span></pre></div></div>
+<p>Set up BLACS context and MPI communicators. The BLACS context is only necessary for using Scalapack.
+For ELPA, the MPI communicators along rows/cols are sufficient, and the grid setup may be done in an arbitrary way as long as it is
+consistent (i.e. 0&lt;=my_prow&lt;np_rows, 0&lt;=my_pcol&lt;np_cols and every process has a unique (my_prow,my_pcol) pair).
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> get_elpa_row_col_comms<span class="br0">&#40;</span>mpi_comm_world, my_prow, my_pcol, mpi_comm_rows, mpi_comm_cols<span class="br0">&#41;</span></pre></div></div>
+<p>All ELPA routines need MPI communicators for communicating within rows or columns of processes, these are set in get_elpa_row_col_comms.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> na_rows <span class="sy0">=</span> numroc<span class="br0">&#40;</span>na, nblk, my_prow, <span class="nu0">0</span>, np_rows<span class="br0">&#41;</span>
+ na_cols <span class="sy0">=</span> numroc<span class="br0">&#40;</span>na, nblk, my_pcol, <span class="nu0">0</span>, np_cols<span class="br0">&#41;</span></pre></div></div>
+<p>Determine the necessary size of the distributed matrices, we use the Scalapack tools routine NUMROC for that.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> descinit<span class="br0">&#40;</span> sc_desc, na, na, nblk, nblk, <span class="nu0">0</span>, <span class="nu0">0</span>, my_blacs_ctxt, na_rows, info <span class="br0">&#41;</span></pre></div></div>
+<p>Set up a scalapack descriptor for the checks to be performed.
+For ELPA the following restrictions hold: The block sizes in both directions must be identical (args 4+5 (nblk)) and the first row and column of the distributed matrix must be on row/col 0/0 (args 6+7)
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">allocate</span><span class="br0">&#40;</span>a <span class="br0">&#40;</span>na_rows,na_cols<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="kw1">allocate</span><span class="br0">&#40;</span>z <span class="br0">&#40;</span>na_rows,na_cols<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="kw1">allocate</span><span class="br0">&#40;</span>as<span class="br0">&#40;</span>na_rows,na_cols<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="kw1">allocate</span><span class="br0">&#40;</span>ev<span class="br0">&#40;</span>na<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ iseed<span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">=</span> myid
+ <span class="kw1">call</span> <span class="kw4">RANDOM_SEED</span><span class="br0">&#40;</span>put<span class="sy0">=</span>iseed<span class="br0">&#41;</span>
+ <span class="kw1">call</span> <span class="kw4">RANDOM_NUMBER</span><span class="br0">&#40;</span>z<span class="br0">&#41;</span>
+ a<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">=</span> z<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>
+ <span class="kw1">call</span> pdtran<span class="br0">&#40;</span>na, na,  <span class="nu0">1</span>.<span class="me1">d0</span>, z, <span class="nu0">1</span>, <span class="nu0">1</span>, sc_desc, <span class="nu0">1</span>.<span class="me1">d0</span>, a, <span class="nu0">1</span>, <span class="nu0">1</span>, sc_desc<span class="br0">&#41;</span> <span class="co1">! A = A + Z**T</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>myid<span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+   print <span class="st0">'(a)'</span>,<span class="st0">'| Random matrix has been symmetrized.'</span>
+ <span class="kw1">end</span> <span class="kw1">if</span></pre></div></div>
+<p>Allocate matrices and set up a test matrix for the eigenvalue problem. For getting a symmetric test matrix A we get a random matrix Z
+and calculate <img class="mwe-math-fallback-png-inline tex" alt="A=Z+Z^{T}" src="../../../../../math/a/5/e/a5eba9625b535c32ff204550ebd81b51.png" />. We want different random numbers on every process (otherways A might get rank deficient):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> as <span class="sy0">=</span> a</pre></div></div>
+<p>Save original matrix A for later accuracy checks
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">if</span> <span class="br0">&#40;</span>myid<span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span> print <span class="st0">'(a)'</span>,<span class="st0">'| Calling two-stage ELPA solver ... '</span>
+ <span class="kw1">call</span> solve_evp_real_2stage<span class="br0">&#40;</span>na, nev, a, na_rows, ev, z, na_rows, nblk, mpi_comm_rows, mpi_comm_cols, mpi_comm_world<span class="br0">&#41;</span></pre></div></div>
+<p>Calculate eigenvalues/eigenvectors with ELPA and test correctness of result using scalapack routines.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">deallocate</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+ <span class="kw1">allocate</span><span class="br0">&#40;</span>tmp1<span class="br0">&#40;</span>na_rows,na_cols<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="kw1">call</span> pdgemm<span class="br0">&#40;</span><span class="st0">'N'</span>,<span class="st0">'N'</span>,na,nev,na,<span class="nu0">1</span>.<span class="me1">d0</span>,as,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc,z,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc,<span class="nu0">0</span>.<span class="me1">d0</span>,tmp1,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc<span class="br0">&#41;</span></pre></div></div>
+<p><b>1.</b> Residual (maximum of <img class="mwe-math-fallback-png-inline tex" alt="||A\cdot Zi-Zi\cdot EVi||" src="../../../../../math/c/2/b/c2be58b56a490a716b3f266e0740a4a9.png" /> ) and tmp1 =  <img class="mwe-math-fallback-png-inline tex" alt="A\cdot Z" src="../../../../../math/8/1/c/81c7308f784f8a1ef1e4e327cfd38bec.png" /> computed with scalapacks parallel dgemm.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">deallocate</span><span class="br0">&#40;</span>as<span class="br0">&#41;</span>
+ <span class="kw1">allocate</span><span class="br0">&#40;</span>tmp2<span class="br0">&#40;</span>na_rows,na_cols<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ tmp2<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">=</span> z<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>
+ <span class="kw1">do</span> i<span class="sy0">=</span><span class="nu0">1</span>,nev
+   <span class="kw1">call</span> pdscal<span class="br0">&#40;</span>na,ev<span class="br0">&#40;</span>i<span class="br0">&#41;</span>,tmp2,<span class="nu0">1</span>,i,sc_desc,<span class="nu0">1</span><span class="br0">&#41;</span>
+ <span class="kw1">enddo</span>
+ tmp1<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">=</span>  tmp1<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">-</span> tmp2<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span></pre></div></div>
+<p>Compute <img class="mwe-math-fallback-png-inline tex" alt="tmp2=Zi\cdot EVi" src="../../../../../math/7/a/8/7a828bf4129bf5abe04a9e8c00ce94f1.png" /> and <img class="mwe-math-fallback-png-inline tex" alt="tmp1=A\cdot Zi-Zi\cdot EVi" src="../../../../../math/d/3/e/d3e51788f4b82f6fa1bc9ecb8731cb3b.png" /> as needed for testing.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> errmax <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="kw1">do</span> i<span class="sy0">=</span><span class="nu0">1</span>,nev
+   <span class="kw1">err</span> <span class="sy0">=</span> <span class="nu0">0</span>
+   <span class="kw1">call</span> pdnrm2<span class="br0">&#40;</span>na,<span class="kw1">err</span>,tmp1,<span class="nu0">1</span>,i,sc_desc,<span class="nu0">1</span><span class="br0">&#41;</span>
+   errmax <span class="sy0">=</span> <span class="kw4">max</span><span class="br0">&#40;</span>errmax, <span class="kw1">err</span><span class="br0">&#41;</span>
+ <span class="kw1">enddo</span></pre></div></div>
+<p>Get maximum norm of columns of tmp1
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">err</span> <span class="sy0">=</span> errmax
+ <span class="kw1">call</span> mpi_allreduce<span class="br0">&#40;</span><span class="kw1">err</span>,errmax,<span class="nu0">1</span>,MPI_REAL8,MPI_MAX,MPI_COMM_WORLD,mpierr<span class="br0">&#41;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>myid<span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span> print <span class="sy0">*</span>,<span class="st0">'Error Residual    &#160;:'</span>,errmax
+ <span class="kw1">if</span> <span class="br0">&#40;</span>errmax <span class="kw2">.<span class="me1">gt</span>.</span> 5e<span class="sy0">-</span>12<span class="br0">&#41;</span> <span class="kw1">then</span>
+   <span class="kw1">status</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="kw1">endif</span></pre></div></div>
+<p>Get maximum error norm over all processors and check if errors are below reasonable threshold.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> tmp1 <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="kw1">call</span> pdgemm<span class="br0">&#40;</span><span class="st0">'T'</span>,<span class="st0">'N'</span>,nev,nev,na,<span class="nu0">1</span>.<span class="me1">d0</span>,z,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc,z,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc,<span class="nu0">0</span>.<span class="me1">d0</span>,tmp1,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc<span class="br0">&#41;</span></pre></div></div>
+<p><b>2.</b> Eigenvector orthogonality as in <img class="mwe-math-fallback-png-inline tex" alt="tmp1=Z^{T}\cdot Z" src="../../../../../math/6/6/e/66ece671a306c164e1b6607b6b2e82bb.png" />
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> tmp2 <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="kw1">call</span> pdlaset<span class="br0">&#40;</span><span class="st0">'A'</span>,nev,nev,<span class="nu0">0</span>.<span class="me1">d0</span>,<span class="nu0">1</span>.<span class="me1">d0</span>,tmp2,<span class="nu0">1</span>,<span class="nu0">1</span>,sc_desc<span class="br0">&#41;</span></pre></div></div>
+<p>Initialize tmp2 to unit matrix.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> tmp1<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">=</span>  tmp1<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span> <span class="sy0">-</span> tmp2<span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>
+ <span class="kw1">err</span> <span class="sy0">=</span> <span class="kw4">maxval</span><span class="br0">&#40;</span><span class="kw4">abs</span><span class="br0">&#40;</span>tmp1<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="kw1">call</span> mpi_allreduce<span class="br0">&#40;</span><span class="kw1">err</span>,errmax,<span class="nu0">1</span>,MPI_REAL8,MPI_MAX,MPI_COMM_WORLD,mpierr<span class="br0">&#41;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>myid<span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span> print <span class="sy0">*</span>,<span class="st0">'Error Orthogonality:'</span>,errmax
+ <span class="kw1">if</span> <span class="br0">&#40;</span>errmax <span class="kw2">.<span class="me1">gt</span>.</span> 5e<span class="sy0">-</span>12<span class="br0">&#41;</span> <span class="kw1">then</span>
+    <span class="kw1">status</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="kw1">endif</span></pre></div></div>
+<p>Compute <img class="mwe-math-fallback-png-inline tex" alt="tmp1=Z^{T}\cdot Z-\underline {{\mathbf  {1}}}" src="../../../../../math/b/c/e/bce3f9900485125e478ce651ef56eb46.png" /> resulting in the Residual Error Matrix.
+Each element of the resulting matrix is checked to be below the threshold of 5E-12.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">deallocate</span><span class="br0">&#40;</span>z<span class="br0">&#41;</span>
+ <span class="kw1">deallocate</span><span class="br0">&#40;</span>tmp1<span class="br0">&#41;</span>
+ <span class="kw1">deallocate</span><span class="br0">&#40;</span>tmp2<span class="br0">&#41;</span>
+ <span class="kw1">deallocate</span><span class="br0">&#40;</span>ev<span class="br0">&#41;</span>
+ <span class="kw1">call</span> blacs_gridexit<span class="br0">&#40;</span>my_blacs_ctxt<span class="br0">&#41;</span>
+ <span class="kw1">call</span> mpi_finalize<span class="br0">&#40;</span>mpierr<span class="br0">&#41;</span>
+ <span class="kw1">call</span> <span class="kw1">EXIT</span><span class="br0">&#40;</span><span class="kw1">STATUS</span><span class="br0">&#41;</span>
+ <span class="kw1">end</span> <span class="kw1">program</span></pre></div></div>
+<p>Final cleanup and termination statement to please the compiler.
+</p>
+<h2><span class="mw-headline" id="Interface_descriptions">Interface descriptions</span></h2>
+<p>The basic interface to ELPA has been shown above and it is very similar to the ones used in standard scalapack routines. For a more detailed view of the available interfaces of ELPA go to the official documentation page of the <a rel="nofollow" target="_blank" class="external text" href="http://elpa.rzg.mpg.de">ELPA</a> creators at Rechenzentrum Garching in Germany. There is a detailed documentation with all neccessary information provided. 
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">
+Andreas Marek, Volker Blum, Rainer Johanni, Ville Havu, Bruno Lang, Thomas Auckenthaler, Alexander Heinecke, Hans-Joachim Bungartz, and Hermann Lederer: 
+"The ELPA Library - Scalable Parallel Eigenvalue Solutions for Electronic Structure Theory and Computational Science"
+The Journal of Physics: Condensed Matter 26, 213102 (2014). <a rel="nofollow" target="_blank" class="external autonumber" href="http://stacks.iop.org/0953-8984/26/213201">[1]</a></span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.249 seconds
+Real time usage: 0.287 seconds
+Preprocessor visited node count: 365/1000000
+Preprocessor generated node count: 892/1000000
+Post‐expand include size: 511/2097152 bytes
+Template argument size: 220/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;oldid=733">http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;oldid=733</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li><li><a href="../../../../articles/s/o/l/Category:Solvers.html" title="Category:Solvers">Solvers</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=ELPA&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=ELPA" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="../../../../articles/e/l/p/ELPA.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:ELPA&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="../../../../articles/e/l/p/ELPA.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="/mediawiki/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" placeholder="Search" title="Search ESL [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../skins/vector/images/search-ltr.png?303" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../../../../misc/esl_wiki_logo.png);" href="../../../../index.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../../../../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+			<li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+			<li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+			<li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+			<li id="n-recentchanges"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" rel="nofollow" target="_blank" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://esl.cecam.org/mediawiki/index.php/Special:WhatLinksHere/ELPA" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChangesLinked/ELPA" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://esl.cecam.org/mediawiki/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;oldid=733" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://esl.cecam.org/mediawiki/index.php?title=ELPA&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-credits">This page was last modified 11:33, 21 July 2014 by <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Jank&amp;action=edit&amp;redlink=1" class="new" title="User:Jank (page does not exist)">Jan Kloppenburg</a>. Based on work by ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Admin&amp;action=edit&amp;redlink=1" class="new" title="User:Admin (page does not exist)">Admin</a>.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../../../../articles/p/r/i/ESL:Privacy_policy.html" title="ESL:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>
+											<li id="footer-places-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served in 2.144 secs. -->
+	</body>
+</html>

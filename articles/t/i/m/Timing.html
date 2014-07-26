@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" /><title>Timing - ESL - The Electronic Structure Library
+</title>
+<meta name="generator" content="MediaWiki 1.22.5" />
+<link rel="shortcut icon" href="../../../../misc/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../opensearch_desc.php" title="ESL (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="ESL Atom feed" href="http://esl.cecam.org/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-editsection{display:none}
+/* cache key: wikidb:resourceloader:filter:minify-css:7:394962a5154c1418682b373f1cb33df1 */</style>
+
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Timing","wgTitle":"Timing","wgCurRevisionId":500,"wgRevisionId":500,"wgArticleId":53,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["ESL entries","Libraries"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Timing","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,
+"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wikidb:resourceloader:filter:minify-js:7:cb60007850aedfaf5fc9f9722333b2eb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-fortran {line-height: normal;}
+.source-fortran li, .source-fortran pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for fortran
+ * CSS class: source-fortran, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.fortran.source-fortran .de1, .fortran.source-fortran .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.fortran.source-fortran  {font-family:monospace;}
+.fortran.source-fortran .imp {font-weight: bold; color: red;}
+.fortran.source-fortran li, .fortran.source-fortran .li1 {font-weight: normal; vertical-align:top;}
+.fortran.source-fortran .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.fortran.source-fortran .li2 {font-weight: bold; vertical-align:top;}
+.fortran.source-fortran .kw1 {color: #b1b100;}
+.fortran.source-fortran .kw2 {color: #000000; font-weight: bold;}
+.fortran.source-fortran .kw3 {color: #000066;}
+.fortran.source-fortran .kw4 {color: #993333;}
+.fortran.source-fortran .co1 {color: #666666; font-style: italic;}
+.fortran.source-fortran .co2 {color: #339933;}
+.fortran.source-fortran .coMULTI {color: #808080; font-style: italic;}
+.fortran.source-fortran .es0 {color: #000099; font-weight: bold;}
+.fortran.source-fortran .br0 {color: #009900;}
+.fortran.source-fortran .sy0 {color: #339933;}
+.fortran.source-fortran .st0 {color: #ff0000;}
+.fortran.source-fortran .nu0 {color: #cc66cc;}
+.fortran.source-fortran .me1 {color: #202020;}
+.fortran.source-fortran .me2 {color: #202020;}
+.fortran.source-fortran .ln-xtra, .fortran.source-fortran li.ln-xtra, .fortran.source-fortran div.ln-xtra {background-color: #ffc;}
+.fortran.source-fortran span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-yaml {line-height: normal;}
+.source-yaml li, .source-yaml pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for yaml
+ * CSS class: source-yaml, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.yaml.source-yaml .de1, .yaml.source-yaml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.yaml.source-yaml  {font-family:monospace;}
+.yaml.source-yaml .imp {font-weight: bold; color: red;}
+.yaml.source-yaml li, .yaml.source-yaml .li1 {font-weight: normal; vertical-align:top;}
+.yaml.source-yaml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.yaml.source-yaml .li2 {font-weight: bold; vertical-align:top;}
+.yaml.source-yaml .kw1 {font-weight: bold;}
+.yaml.source-yaml .co0 {color: #303050;background-color: #F5F5F5}
+.yaml.source-yaml .co1 {color: blue;}
+.yaml.source-yaml .co2 {font-weight: bold; color: red;}
+.yaml.source-yaml .co3 {color: green;}
+.yaml.source-yaml .co4 {color: #007F45;}
+.yaml.source-yaml .co5 {color: #7f7fFF;}
+.yaml.source-yaml .co6 {color: #FF7000;}
+.yaml.source-yaml .co7 {color: #FF45C0;}
+.yaml.source-yaml .co8 {font-weight: bold; color: #005F5F;}
+.yaml.source-yaml .sy1 {color: cyan;}
+.yaml.source-yaml .sy2 {font-weight: bold; color: brown;}
+.yaml.source-yaml .st0 {color: #CF00CF;}
+.yaml.source-yaml .ln-xtra, .yaml.source-yaml li.ln-xtra, .yaml.source-yaml div.ln-xtra {background-color: #ffc;}
+.yaml.source-yaml span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mediawiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Timing skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Timing</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">From ESL</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="float: right; background: AliceBlue; padding: 10px; margin-left: 10px; margin-bottom: 10px; border-style: solid; border-width: 1px; width: 35%">
+<p><b>Source authors:</b>
+</p><p>Luigi Genovese, CEA Grenoble <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Homepage</a> <br />
+Damien Caliste, CEA Grenoble, <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Homepage2</a>
+</p><p><b>Responsible for the ESL entry:</b>
+</p><p><a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephan_Mohr&amp;action=edit&amp;redlink=1" class="new" title="User:Stephan Mohr (page does not exist)">Stephan Mohr</a> (wiki-profile)
+</p><p><b>License:</b> This software is licensed under LGPL
+</p><p><b>Type of development:</b> {{{typedel}}}
+</p><p><b>Download:</b> <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Here</a>
+</p>
+</div>
+<p><br />
+The <a href="../../../../articles/f/l/i/Flib.html" title="Flib">flib</a> library contains various utilities to perform a detailed timing of a given code. The analysis is done separateky for each MPI task and can thus also provide indormations about load balancing problems.
+</p>
+<table align="right">
+<tr>
+<td><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Public_routines"><span class="tocnumber">1</span> <span class="toctext">Public routines</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Timing_by_categories"><span class="tocnumber">2.1</span> <span class="toctext">Timing by categories</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Timing_by_subroutines"><span class="tocnumber">2.2</span> <span class="toctext">Timing by subroutines</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Public_routines">Public routines</span></h1>
+<p>For a complete description of the API of all public routines see the detailed doxygen documentation [LINK TO BE ADDED]. To get access to these routines one has to include the statement <tt>which modules to use???</tt> in the header of each subroutine which should be timed.
+</p>
+<h1><span class="mw-headline" id="Examples">Examples</span></h1>
+<p>flib can perform a detailed timing <a href="#Timing_by_categories">by categories</a> or <a href="#Timing_by_subroutines">by subroutines</a>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Timing_by_categories">Timing by categories</span></h2>
+<p>Here one can manually decide which part of the code should be assigned to which category. It is also possible to split one single subroutine into different categories (e.g. computation ad communication). However it is not possible to assign a given task to several categories, i.e. only one category can be active. Otherwise the code will crash with an error.
+</p>
+<h2><span class="mw-headline" id="Timing_by_subroutines">Timing by subroutines</span></h2>
+<p>flib can perform a timing by routine. To time a subroutine it is enough that this subroutine contains calls to f_routine and f_release_routine (which have been introduced for the Memory managment). At the end s detailed tree with the partial times will be created.
+This mechanism can most easily be shown by a small example. Assume that there are four routines sub1, sub2, sub3 and waste_time:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">subroutine</span> sub1<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw3">use</span> dynamic_memory
+   <span class="kw1">call</span> f_routine<span class="br0">&#40;</span><span class="st0">'sub1'</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> sub2<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> sub2<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> sub3<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> f_release_routine<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> sub1
+&#160;
+ <span class="kw1">subroutine</span> sub2<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw3">use</span> dynamic_memory
+   <span class="kw1">call</span> f_routine<span class="br0">&#40;</span><span class="st0">'sub2'</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> waste_time<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> f_release_routine<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> sub2
+&#160;
+ <span class="kw1">subroutine</span> sub3<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw3">use</span> dynamic_memory
+   <span class="kw1">call</span> f_routine<span class="br0">&#40;</span><span class="st0">'sub3'</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> waste_time<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw1">call</span> f_release_routine<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> sub3
+&#160;
+ <span class="kw1">subroutine</span> waste_time<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw3">implicit</span> <span class="kw3">none</span>
+   <span class="kw3">integer</span> <span class="sy0">::</span> <span class="me2">i</span>
+   <span class="kw3">real</span><span class="br0">&#40;</span><span class="kw3">kind</span><span class="sy0">=</span><span class="nu0">8</span><span class="br0">&#41;</span> <span class="sy0">::</span> <span class="me2">tt</span>
+   tt<span class="sy0">=</span><span class="nu0">0</span>.<span class="me1">d0</span>
+   <span class="kw1">do</span> i<span class="sy0">=</span><span class="nu0">1</span>,<span class="nu0">1000000</span>
+       tt <span class="sy0">=</span> tt <span class="sy0">+</span> <span class="kw4">sin</span><span class="br0">&#40;</span><span class="kw3">real</span><span class="br0">&#40;</span>i,<span class="kw3">kind</span><span class="sy0">=</span><span class="nu0">8</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+   <span class="kw1">end</span> <span class="kw1">do</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> waste_time</pre></div></div>
+<p>If <i>sub1</i> is directly called from the main program, this will lead to the following timing output:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="yaml source-yaml"><pre class="de1"><span class="co3"> - Main program</span><span class="sy2">: </span><span class="br0">&#91;</span> <span class="nu0">0.158</span>,  <span class="nu0">1</span>, ~*<span class="br0">&#93;</span><span class="co4">
+   Subroutines</span>:<span class="co3">
+   - sub1</span><span class="sy2">: </span><span class="br0">&#91;</span> <span class="nu0">0.157</span>,  <span class="nu0">1</span>,  <span class="nu0">99.64</span><span class="co2">%]</span><span class="co4">
+     Subroutines</span>:<span class="co3">
+     - sub2</span><span class="sy2">: </span><span class="br0">&#91;</span> <span class="nu0">0.105</span>,  <span class="nu0">2</span>,  <span class="nu0">66.89</span><span class="co2">%]</span><span class="co3">
+     - sub3</span><span class="sy2">: </span><span class="br0">&#91;</span> 5.220E-02,  <span class="nu0">1</span>,  <span class="nu0">33.25</span><span class="co2">%]</span></pre></div></div>
+<p>The first entry is the absolut time spent in this routine, the second one the number of calls, and the last one the percentage of time that the routine took with repect to the next upper one (example: <i>sub2</i> took 66% of the time of <i>sub1</i> (from where it was called)). Note that the routine <i>waste_time</i> does not appear in the timinig list, as it does not call <i>f_routine</i>.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.038 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 38/1000000
+Preprocessor generated node count: 150/1000000
+Post‐expand include size: 554/2097152 bytes
+Template argument size: 250/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;oldid=500">http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;oldid=500</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Timing&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Timing" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="../../../../articles/t/i/m/Timing.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:Timing&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="../../../../articles/t/i/m/Timing.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="/mediawiki/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" placeholder="Search" title="Search ESL [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../skins/vector/images/search-ltr.png?303" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../../../../misc/esl_wiki_logo.png);" href="../../../../index.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../../../../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+			<li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+			<li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+			<li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+			<li id="n-recentchanges"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" rel="nofollow" target="_blank" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://esl.cecam.org/mediawiki/index.php/Special:WhatLinksHere/Timing" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChangesLinked/Timing" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://esl.cecam.org/mediawiki/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;oldid=500" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://esl.cecam.org/mediawiki/index.php?title=Timing&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-credits">This page was last modified 15:56, 11 July 2014 by ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephanm&amp;action=edit&amp;redlink=1" class="new" title="User:Stephanm (page does not exist)">Stephanm</a>. </li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../../../../articles/p/r/i/ESL:Privacy_policy.html" title="ESL:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>
+											<li id="footer-places-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served in 3.940 secs. -->
+	</body>
+</html>

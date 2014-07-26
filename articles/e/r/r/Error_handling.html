@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" /><title>Error handling - ESL - The Electronic Structure Library
+</title>
+<meta name="generator" content="MediaWiki 1.22.5" />
+<link rel="shortcut icon" href="../../../../misc/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../opensearch_desc.php" title="ESL (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="ESL Atom feed" href="http://esl.cecam.org/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-editsection{display:none}
+/* cache key: wikidb:resourceloader:filter:minify-css:7:394962a5154c1418682b373f1cb33df1 */</style>
+
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Error_handling","wgTitle":"Error handling","wgCurRevisionId":497,"wgRevisionId":497,"wgArticleId":55,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["ESL entries","Libraries"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Error_handling","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,
+"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wikidb:resourceloader:filter:minify-js:7:cb60007850aedfaf5fc9f9722333b2eb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-fortran {line-height: normal;}
+.source-fortran li, .source-fortran pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for fortran
+ * CSS class: source-fortran, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.fortran.source-fortran .de1, .fortran.source-fortran .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.fortran.source-fortran  {font-family:monospace;}
+.fortran.source-fortran .imp {font-weight: bold; color: red;}
+.fortran.source-fortran li, .fortran.source-fortran .li1 {font-weight: normal; vertical-align:top;}
+.fortran.source-fortran .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.fortran.source-fortran .li2 {font-weight: bold; vertical-align:top;}
+.fortran.source-fortran .kw1 {color: #b1b100;}
+.fortran.source-fortran .kw2 {color: #000000; font-weight: bold;}
+.fortran.source-fortran .kw3 {color: #000066;}
+.fortran.source-fortran .kw4 {color: #993333;}
+.fortran.source-fortran .co1 {color: #666666; font-style: italic;}
+.fortran.source-fortran .co2 {color: #339933;}
+.fortran.source-fortran .coMULTI {color: #808080; font-style: italic;}
+.fortran.source-fortran .es0 {color: #000099; font-weight: bold;}
+.fortran.source-fortran .br0 {color: #009900;}
+.fortran.source-fortran .sy0 {color: #339933;}
+.fortran.source-fortran .st0 {color: #ff0000;}
+.fortran.source-fortran .nu0 {color: #cc66cc;}
+.fortran.source-fortran .me1 {color: #202020;}
+.fortran.source-fortran .me2 {color: #202020;}
+.fortran.source-fortran .ln-xtra, .fortran.source-fortran li.ln-xtra, .fortran.source-fortran div.ln-xtra {background-color: #ffc;}
+.fortran.source-fortran span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-yaml {line-height: normal;}
+.source-yaml li, .source-yaml pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for yaml
+ * CSS class: source-yaml, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.yaml.source-yaml .de1, .yaml.source-yaml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.yaml.source-yaml  {font-family:monospace;}
+.yaml.source-yaml .imp {font-weight: bold; color: red;}
+.yaml.source-yaml li, .yaml.source-yaml .li1 {font-weight: normal; vertical-align:top;}
+.yaml.source-yaml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.yaml.source-yaml .li2 {font-weight: bold; vertical-align:top;}
+.yaml.source-yaml .kw1 {font-weight: bold;}
+.yaml.source-yaml .co0 {color: #303050;background-color: #F5F5F5}
+.yaml.source-yaml .co1 {color: blue;}
+.yaml.source-yaml .co2 {font-weight: bold; color: red;}
+.yaml.source-yaml .co3 {color: green;}
+.yaml.source-yaml .co4 {color: #007F45;}
+.yaml.source-yaml .co5 {color: #7f7fFF;}
+.yaml.source-yaml .co6 {color: #FF7000;}
+.yaml.source-yaml .co7 {color: #FF45C0;}
+.yaml.source-yaml .co8 {font-weight: bold; color: #005F5F;}
+.yaml.source-yaml .sy1 {color: cyan;}
+.yaml.source-yaml .sy2 {font-weight: bold; color: brown;}
+.yaml.source-yaml .st0 {color: #CF00CF;}
+.yaml.source-yaml .ln-xtra, .yaml.source-yaml li.ln-xtra, .yaml.source-yaml div.ln-xtra {background-color: #ffc;}
+.yaml.source-yaml span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mediawiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Error_handling skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Error handling</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">From ESL</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="float: right; background: AliceBlue; padding: 10px; margin-left: 10px; margin-bottom: 10px; border-style: solid; border-width: 1px; width: 35%">
+<p><b>Source authors:</b>
+</p><p>Luigi Genovese, CEA Grenoble <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Homepage</a> <br />
+Damien Caliste, CEA Grenoble, <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Homepage2</a>
+</p><p><b>Responsible for the ESL entry:</b>
+</p><p><a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephan_Mohr&amp;action=edit&amp;redlink=1" class="new" title="User:Stephan Mohr (page does not exist)">Stephan Mohr</a> (wiki-profile)
+</p><p><b>License:</b> This software is licensed under LGPL
+</p><p><b>Type of development:</b> {{{typedel}}}
+</p><p><b>Download:</b> <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Here</a>
+</p>
+</div>
+<p>The <a href="../../../../articles/f/l/i/Flib.html" title="Flib">flib</a> library provides routines to handle exceptions and the errors with a mechanism of callback routines.
+</p>
+<table align="right">
+<tr>
+<td><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Public_routines"><span class="tocnumber">1</span> <span class="toctext">Public routines</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Usage_and_example"><span class="tocnumber">2</span> <span class="toctext">Usage and example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Minimal_example"><span class="tocnumber">2.1</span> <span class="toctext">Minimal example</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Public_routines">Public routines</span></h1>
+<p>For a complete description of the API of all public routines see the detailed doxygen documentation [LINK TO BE ADDED]. To get access to these routines one has to include the statement which modules to use??? in the header of each subroutine which should be timed.
+</p>
+<h1><span class="mw-headline" id="Usage_and_example">Usage and example</span></h1>
+<p>The error handling consists of two steps. First, one has to define the error and the action that has to be taken if this error happens, and in a second step on actually has to trigger the error.
+</p><p>To define an error on can use the routine <tt>f_err_define</tt> as follows:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw3">use</span> dictionary
+ <span class="kw1">call</span> f_err_define<span class="br0">&#40;</span>err_name<span class="sy0">=</span><span class="st0">'ERROR_ONE'</span>, err_msg<span class="sy0">=</span><span class="st0">'This is an error'</span>,err_id<span class="sy0">=</span>error_one<span class="br0">&#41;</span></pre></div></div>
+<p>The argument <tt>err_id</tt> is optional and is the way of having the id of the associated error.
+The module dictionary contains the dictionary type and also the error handling routines.
+</p><p>If this definition is done, one can raise an exception using <tt>f_err_throw</tt> as:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> f_err_throw<span class="br0">&#40;</span><span class="st0">'We raise the error ERROR_ONE'</span>,err_name<span class="sy0">=</span><span class="st0">'ERROR_ONE'</span><span class="br0">&#41;</span></pre></div></div>
+<p>or, if the variable <tt>err_one</tt> does exist in the same scope, as
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> f_err_throw<span class="br0">&#40;</span><span class="st0">'We raise the error ERROR_ONE'</span>,err_id<span class="sy0">=</span>error_one<span class="br0">&#41;</span></pre></div></div>
+<p>It is also possible to test a condition and raise the error only if this condition is true. This can be done using the function <tt>f_err_raise</tt>:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">if</span> <span class="br0">&#40;</span>f_err_raise<span class="br0">&#40;</span>x&gt;<span class="nu0">0</span>,<span class="st0">'X has to be strictly positive'</span>,err_name<span class="sy0">=</span><span class="st0">'ERROR_ONE'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>  <span class="kw1">return</span></pre></div></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Minimal_example">Minimal example</span></h2>
+<p>Here is a small example which shows some basic features of the error handling module. Together with the comments it should be self-explanatory. Some more examples can be found in the file <i>errs.f90</i>
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">subroutine</span> test_error_handling<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw3">use</span> yaml_output                                                          <span class="co1">!required to write data in the YAML format</span>
+   <span class="kw3">use</span> dictionaries                                                         <span class="co1">!contains the error handling routines</span>
+   <span class="kw3">implicit</span> <span class="kw3">none</span>
+   <span class="kw3">integer</span> <span class="sy0">::</span> <span class="me2">ERR_TEST</span>
+   <span class="kw3">external</span> <span class="sy0">::</span> <span class="me2">abort_test</span>
+&#160;
+   <span class="kw1">call</span> yaml_comment<span class="br0">&#40;</span><span class="st0">'Error Handling Module Test'</span>,hfill<span class="sy0">=</span><span class="st0">'~'</span><span class="br0">&#41;</span>                <span class="co1">!just a comment</span>
+&#160;
+&#160;
+   <span class="kw1">call</span> f_err_define<span class="br0">&#40;</span>err_name<span class="sy0">=</span><span class="st0">'ERR_TEST'</span>,<span class="sy0">&amp;</span>                                  <span class="co1">!define the error</span>
+        err_msg<span class="sy0">=</span><span class="st0">'This is the error message for the error &quot;ERR_TEST&quot; and'</span><span class="sy0">//&amp;</span>
+        <span class="st0">' it is written extensively on purpose to see whether the yaml'</span><span class="sy0">//&amp;</span>
+        <span class="st0">' module can still handle it'</span>,<span class="sy0">&amp;</span>
+        err_action<span class="sy0">=</span><span class="st0">'For this error, contact the routine developer'</span>,<span class="sy0">&amp;</span>
+        err_id<span class="sy0">=</span>ERR_TEST,callback<span class="sy0">=</span>abort_test<span class="br0">&#41;</span>
+&#160;
+   <span class="kw1">call</span> yaml_map<span class="br0">&#40;</span><span class="st0">&quot;Raising the TEST error, errcode&quot;</span>,ERR_TEST<span class="br0">&#41;</span>                <span class="co1">!print that the error will now be triggered</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span>f_err_raise<span class="br0">&#40;</span><span class="kw2">.<span class="me1">true</span>.</span>,<span class="st0">'Extra message added'</span>,err_id<span class="sy0">=</span>ERR_TEST<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span>    <span class="co1">!raise the error and return</span>
+&#160;
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> test_error_handling
+&#160;
+ <span class="kw1">subroutine</span> abort_test<span class="br0">&#40;</span><span class="br0">&#41;</span>                                                    <span class="co1">!routine that will be called when the error is raised</span>
+   <span class="kw3">use</span> yaml_output
+   <span class="kw3">implicit</span> <span class="kw3">none</span>
+   <span class="kw1">call</span> yaml_comment<span class="br0">&#40;</span><span class="st0">'printing error informations'</span>,hfill<span class="sy0">=</span><span class="st0">'_'</span><span class="br0">&#41;</span>               <span class="co1">!just a comment indicating that the error informations will now be written</span>
+   <span class="kw1">call</span> f_dump_last_error<span class="br0">&#40;</span><span class="br0">&#41;</span>                                                 <span class="co1">!print the error information</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> abort_test</pre></div></div>
+<p>This will produce the output
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="yaml source-yaml"><pre class="de1">  <span class="co1">#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Error Handling Module Test</span><span class="co3">
+ Raising the TEST error, errcode       </span><span class="sy2">: </span> <span class="nu0">22</span>
+  <span class="co1">#_____________________________________________________________ printing error informations</span><span class="co4">
+ ERR_TEST</span>:<span class="co3">
+   Id                                  </span><span class="sy2">: </span><span class="nu0">22</span><span class="co4">
+   Message</span><span class="sy2">:
+</span>     This is the error message for the error <span class="st0">&quot;ERR_TEST&quot;</span> and it is written extensively on
+     purpose to see whether the yaml module can still handle it<span class="co3">
+   Action                              </span><span class="sy2">: </span>For this error, contact the routine developer<span class="co3">
+   Callback Procedure Address          </span><span class="sy2">: </span><span class="nu0">4277190</span><span class="co3">
+ Additional Info                       </span><span class="sy2">: </span>Extra message added</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.070 seconds
+Real time usage: 0.071 seconds
+Preprocessor visited node count: 70/1000000
+Preprocessor generated node count: 226/1000000
+Post‐expand include size: 554/2097152 bytes
+Template argument size: 250/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;oldid=497">http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;oldid=497</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Error+handling&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://esl.cecam.org/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Error+handling" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="../../../../articles/e/r/r/Error_handling.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:Error_handling&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="../../../../articles/e/r/r/Error_handling.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="/mediawiki/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" placeholder="Search" title="Search ESL [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../skins/vector/images/search-ltr.png?303" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../../../../misc/esl_wiki_logo.png);" href="../../../../index.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../../../../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+			<li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+			<li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+			<li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+			<li id="n-recentchanges"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" rel="nofollow" target="_blank" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://esl.cecam.org/mediawiki/index.php/Special:WhatLinksHere/Error_handling" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://esl.cecam.org/mediawiki/index.php/Special:RecentChangesLinked/Error_handling" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://esl.cecam.org/mediawiki/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;oldid=497" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://esl.cecam.org/mediawiki/index.php?title=Error_handling&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-credits">This page was last modified 15:54, 11 July 2014 by ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephanm&amp;action=edit&amp;redlink=1" class="new" title="User:Stephanm (page does not exist)">Stephanm</a>. </li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../../../../articles/p/r/i/ESL:Privacy_policy.html" title="ESL:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>
+											<li id="footer-places-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://esl.cecam.org/mediawiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served in 4.161 secs. -->
+	</body>
+</html>
