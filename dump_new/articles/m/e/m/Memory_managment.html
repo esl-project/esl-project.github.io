@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Memory managment - ESL - The Electronic Structure Library
+</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body class="mediawiki ltr ns-0 ns-subject page-Memory_managment">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Memory managment</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From ESL</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="float: right; background: AliceBlue; padding: 10px; margin-left: 10px; margin-bottom: 10px; border-style: solid; border-width: 1px; width: 35%">
+<p><b>Source authors:</b>
+</p><p>Luigi Genovese, CEA Grenoble <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Homepage</a> <br />
+Damien Caliste, CEA Grenoble, <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Homepage2</a>
+</p><p><b>Responsible for the ESL entry:</b>
+</p><p><a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephan_Mohr&amp;action=edit&amp;redlink=1" class="new" title="User:Stephan Mohr (page does not exist)">Stephan Mohr</a> (wiki-profile)
+</p><p><b>License:</b> This software is licensed under LGPL
+</p><p><b>Type of development:</b> {{{typedel}}}
+</p><p><b>Download:</b> <a rel="nofollow" target="_blank" class="external text" href="http://goesnowhere.com/">Here</a>
+</p>
+</div>
+<p>The <a href="../../../../articles/f/l/i/Flib.html" title="Flib">flib</a> library provides routines to allocate, deallocate and trace the memory use of a program. The goal is to trace all memory allocations and deallocations, also keeping track of the exact location in memory where the data is allocated. To this end flib provides several wrappers. 
+</p>
+<table align="right">
+<tr>
+<td><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Public_routines"><span class="tocnumber">1</span> <span class="toctext">Public routines</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Usage_and_examples"><span class="tocnumber">2</span> <span class="toctext">Usage and examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Short_example_showing_the_use_of_the_wrappers"><span class="tocnumber">2.1</span> <span class="toctext">Short example showing the use of the wrappers</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Possible_allocation_shapes"><span class="tocnumber">2.2</span> <span class="toctext">Possible allocation shapes</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Public_routines">Public routines</span></h1>
+<p>For a complete description of the API of all public routines see the detailed doxygen documentation [LINK TO BE ADDED]. 
+</p><p>The use of these routines is most easily shown by a <a href="#Short_example_showing_the_use_of_the_wrappers">short example</a>.
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Usage_and_examples">Usage and examples</span></h1>
+<p>In order to use the mermory managment functionalities one has to include the statement <tt>use dynamic_memory</tt> in the header of each routine whose allocations and deallocations shoule be traced. This gives access to all public routines. 
+</p>
+<h2><span class="mw-headline" id="Short_example_showing_the_use_of_the_wrappers">Short example showing the use of the wrappers</span></h2>
+<p>A minimal example showing the basic wrappers and their usage is shown below. More examples can be found in the file <i>dynmem.f90</i>
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw3">use</span> dynamic_memory                                     <span class="co1">!the module that contains the routines</span>
+ <span class="kw3">real</span><span class="br0">&#40;</span><span class="kw3">kind</span><span class="sy0">=</span><span class="nu0">8</span><span class="br0">&#41;</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>, <span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">ab</span>, weight
+ <span class="kw3">integer</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">weight</span>
+ <span class="kw3">integer</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span>, <span class="kw3">pointer</span> <span class="sy0">::</span> <span class="me2">i1_ptr</span>
+&#160;
+ <span class="kw1">call</span> f_routine<span class="br0">&#40;</span>id<span class="sy0">=</span><span class="st0">'Routine a'</span><span class="br0">&#41;</span>                         <span class="co1">!give the name of the routine which does the allocations / deallocations</span>
+&#160;
+ ab <span class="sy0">=</span> f_malloc<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">/</span> <span class="nu0">10</span>, <span class="nu0">10</span> <span class="sy0">/</span><span class="br0">&#41;</span>,id<span class="sy0">=</span><span class="st0">'ab'</span><span class="br0">&#41;</span>                    <span class="co1">!use the wrapper to allocate the array ab with sizes (1..10,1..10)</span>
+ weight<span class="sy0">=</span>f_malloc<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="nu0">1</span>.<span class="kw1">to</span>.8,<span class="nu0">1</span>.<span class="kw1">to</span>.8,<span class="nu0">2</span>.<span class="kw1">to</span>.4<span class="sy0">/</span><span class="br0">&#41;</span>,id<span class="sy0">=</span><span class="st0">'weight'</span><span class="br0">&#41;</span>  <span class="co1">!use the wrapper to allocate the array weight woth sizes (1..8,1..8,2..4)</span>
+ i1_ptr<span class="sy0">=</span>f_malloc_ptr<span class="br0">&#40;</span><span class="nu0">34</span>,id<span class="sy0">=</span><span class="st0">'i1_ptr'</span><span class="br0">&#41;</span>                    <span class="co1">!use the wrapper to allocate the pointer i1_ptr with size (1..34)</span>
+&#160;
+ i1_ptr<span class="sy0">=</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">789</span>,i<span class="sy0">=</span><span class="nu0">1</span>,<span class="kw4">size</span><span class="br0">&#40;</span>i1_ptr<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">/</span><span class="br0">&#41;</span>                    <span class="co1">!shift the lower and upper bounds of i1_ptr?</span>
+&#160;
+ <span class="kw1">call</span> f_free_ptr<span class="br0">&#40;</span>i1_ptr<span class="br0">&#41;</span>                                <span class="co1">!use the wrapper to deallocate i1_ptr</span>
+ <span class="kw1">call</span> f_free<span class="br0">&#40;</span>weight<span class="br0">&#41;</span>                                    <span class="co1">!use the wrapper to deallocate weight                      </span>
+ <span class="kw1">call</span> f_free<span class="br0">&#40;</span>ab<span class="br0">&#41;</span>                                        <span class="co1">!use the wrapper to deallocate ab</span>
+&#160;
+ <span class="kw1">call</span> f_release_routine<span class="br0">&#40;</span><span class="br0">&#41;</span>                               <span class="co1">!indicate that the profiling for this routine should end</span></pre></div></div>
+<p>First of all one has to include the module <tt>dynamic_memory</tt>. Then, at the beginning and end of each subroutine which should explicitely be traced, the statements <tt>call f_routine(id=&lt;routine_name&gt;</tt> and <tt>call f_release_routine()</tt> should be included. If they are missing, the tracing will still be performed, but the routine which will be conected with the alloction will be that one in which these calls have been executed for the last time.
+When allocating an array or pointer, one has to use the generic fuctions <tt>f_malloc</tt> and <tt>f_malloc_ptr</tt>, respectively. To deallocate an array or pointer, one has to use the generic subroutines <tt>f_free</tt> and <tt>f_free_ptr</tt>, respectively. If at the beginning of the routine <tt>f_routine</tt> has been called, it is mandatory to ad a call to <tt>f_release_routine()</tt> at the end.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Possible_allocation_shapes">Possible allocation shapes</span></h2>
+<p>There are many possibilities to allocate an array. The following examples should be self-explanatory:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">subroutine</span> test_routine
+   <span class="kw3">use</span> dynamic_memory
+   <span class="kw3">integer</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">i1</span>, i2, j2
+   <span class="kw3">integer</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">pointer</span> <span class="sy0">::</span> <span class="me2">j1</span>
+   <span class="kw3">integer</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">pointer</span> <span class="sy0">::</span> <span class="me2">i3</span>
+   <span class="kw3">real</span><span class="br0">&#40;</span><span class="kw3">kind</span><span class="sy0">=</span><span class="nu0">8</span><span class="br0">&#41;</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">d1</span>
+   <span class="kw3">real</span><span class="br0">&#40;</span><span class="kw3">kind</span><span class="sy0">=</span><span class="nu0">8</span><span class="br0">&#41;</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">d2</span>
+   <span class="kw3">real</span><span class="br0">&#40;</span><span class="kw3">kind</span><span class="sy0">=</span><span class="nu0">8</span><span class="br0">&#41;</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span>,<span class="sy0">:</span>,<span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">d3</span>
+   <span class="kw3">integer</span>,<span class="kw3">parameter</span> <span class="sy0">::</span> <span class="me2">strlen</span><span class="sy0">=</span><span class="nu0">256</span>
+   <span class="kw3">character</span><span class="br0">&#40;</span><span class="kw4">len</span><span class="sy0">=</span>strlen<span class="br0">&#41;</span>,<span class="kw3">dimension</span><span class="br0">&#40;</span><span class="sy0">:</span><span class="br0">&#41;</span>,<span class="kw3">allocatable</span> <span class="sy0">::</span> <span class="me2">c1</span>
+&#160;
+   <span class="kw1">call</span> f_routine<span class="br0">&#40;</span>id<span class="sy0">=</span><span class="st0">'test_routine'</span><span class="br0">&#41;</span>
+&#160;
+   d1 <span class="sy0">=</span> f_malloc<span class="br0">&#40;</span><span class="nu0">17</span>,id<span class="sy0">=</span><span class="st0">'d1'</span><span class="br0">&#41;</span>                <span class="co1">!allocate array d1 with size (1..17)</span>
+   d2 <span class="sy0">=</span> f_malloc<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="nu0">15</span>,<span class="nu0">2</span><span class="sy0">/</span><span class="br0">&#41;</span>,id<span class="sy0">=</span><span class="st0">'d2'</span><span class="br0">&#41;</span>          <span class="co1">!allocate array d2 with size (1..15,1..2)</span>
+   d3 <span class="sy0">=</span> f_malloc<span class="br0">&#40;</span><span class="br0">&#91;</span><span class="nu0">10</span>,<span class="nu0">3</span>,<span class="nu0">2</span><span class="br0">&#93;</span>,id<span class="sy0">=</span><span class="st0">'d3'</span><span class="br0">&#41;</span>          <span class="co1">!allocate array d3 with size (1..10,1..3,1..2)</span>
+   i2 <span class="sy0">=</span> f_malloc<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="nu0">0</span>.<span class="kw1">to</span>.5,<span class="sy0">-</span><span class="nu0">1</span>.<span class="kw1">to</span>.1<span class="sy0">/</span><span class="br0">&#41;</span>,id<span class="sy0">=</span><span class="st0">'i2'</span><span class="br0">&#41;</span> <span class="co1">!allocate array i1 with size (0..5,-1..1)</span>
+   j2 <span class="sy0">=</span> f_malloc<span class="br0">&#40;</span>src<span class="sy0">=</span>i2,id<span class="sy0">=</span><span class="st0">'j2'</span><span class="br0">&#41;</span>            <span class="co1">!allocate array j2 with the same size as i2</span>
+   c1 <span class="sy0">=</span> f_malloc_str<span class="br0">&#40;</span>strlen,<span class="nu0">5</span>,id<span class="sy0">=</span><span class="st0">'c1'</span><span class="br0">&#41;</span>      <span class="co1">!allocate array c1 with size (1..5) (note that you have to pass as well strlen)</span>
+   i1 <span class="sy0">=</span> f_malloc0<span class="br0">&#40;</span><span class="nu0">10</span>,id<span class="sy0">=</span><span class="st0">'i1'</span><span class="br0">&#41;</span>               <span class="co1">!allocate array i1 with size (1..10) and set to zero</span>
+   j1 <span class="sy0">=</span> f_malloc_ptr<span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">5</span>.<span class="kw1">to</span>.5,id<span class="sy0">=</span><span class="st0">'j1'</span><span class="br0">&#41;</span>       <span class="co1">!allocate pointer j1 to size (-5..5)</span>
+   j3 <span class="sy0">=</span> f_malloc0_ptr<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="nu0">4</span>,<span class="nu0">4</span>,<span class="nu0">2</span><span class="sy0">/</span><span class="br0">&#41;</span>,id<span class="sy0">=</span><span class="st0">'i3'</span><span class="br0">&#41;</span>    <span class="co1">!allocate pointer j3 with size (1..4,1..4,1..2) and set to zero</span>
+&#160;
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>d1<span class="br0">&#41;</span>                          <span class="co1">!deallocate d1</span>
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>d2<span class="br0">&#41;</span>                          <span class="co1">!deallocate d2</span>
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>d3<span class="br0">&#41;</span>                          <span class="co1">!deallocate d2</span>
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>i2<span class="br0">&#41;</span>                          <span class="co1">!deallocate i2</span>
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>j2<span class="br0">&#41;</span>                          <span class="co1">!deallocate j2</span>
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>c1<span class="br0">&#41;</span>                          <span class="co1">!deallocate c1</span>
+   <span class="kw1">call</span> f_free<span class="br0">&#40;</span>i1<span class="br0">&#41;</span>                          <span class="co1">!deallocate i1</span>
+   <span class="kw1">call</span> f_free_ptr<span class="br0">&#40;</span>j1<span class="br0">&#41;</span>                      <span class="co1">!deallocate j1</span>
+   <span class="kw1">call</span> f_free_ptr<span class="br0">&#40;</span>j3<span class="br0">&#41;</span>                      <span class="co1">!deallocate j3</span>
+&#160;
+   <span class="kw1">call</span> f_release_routine<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> test_routine</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.059 seconds
+Real time usage: 0.061 seconds
+Preprocessor visited node count: 44/1000000
+Preprocessor generated node count: 150/1000000
+Post‐expand include size: 554/2097152 bytes
+Template argument size: 250/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/m/e/m/Memory_managment.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:Memory_managment&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://esl.cecam.org/mediawiki/index.php/Memory_managment">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/esl_wiki_logo.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+	     	      <li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+	     	      <li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+	     	      <li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+	     	      <li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>SEARCH</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>TOOLBOX</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 15:56, 11 July 2014 by ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephanm&amp;action=edit&amp;redlink=1" class="new" title="User:Stephanm (page does not exist)">Stephanm</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

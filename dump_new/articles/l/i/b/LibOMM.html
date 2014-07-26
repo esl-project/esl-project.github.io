@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>LibOMM - ESL - The Electronic Structure Library
+</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body class="mediawiki ltr ns-0 ns-subject page-LibOMM">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">LibOMM</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From ESL</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Interface documentation in progress...
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#libOMM"><span class="tocnumber">1</span> <span class="toctext">libOMM</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Description"><span class="tocnumber">1.1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Public_subroutines"><span class="tocnumber">1.2</span> <span class="toctext">Public subroutines</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Dependencies"><span class="tocnumber">1.3</span> <span class="toctext">Dependencies</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Parallelization"><span class="tocnumber">1.4</span> <span class="toctext">Parallelization</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Language_interoperability"><span class="tocnumber">1.5</span> <span class="toctext">Language interoperability</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Compilation"><span class="tocnumber">1.6</span> <span class="toctext">Compilation</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Algorithms"><span class="tocnumber">1.7</span> <span class="toctext">Algorithms</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Authors"><span class="tocnumber">1.8</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Publications"><span class="tocnumber">1.9</span> <span class="toctext">Publications</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="libOMM">libOMM</span></h1>
+<h2><span class="mw-headline" id="Description">Description</span></h2>
+<p>libOMM solves the Kohn-Sham equation as a generalized eigenvalue problem for a fixed Hamiltonian. It implements the orbital minimization method (OMM), which works within a density matrix formalism. The basic strategy of the OMM is to find the set of Wannier functions (WFs) describing the occupied subspace by direct unconstrained minimization of an appropriately-constructed functional. The density matrix can then be calculated from the WFs.
+</p><p>The OMM solver is usually employed within an outer self-consistency (SCF) cycle. Therefore, the WFs resulting from one SCF iteration can be saved and then re-used as the initial guess for the next iteration.
+</p>
+<h2><span class="mw-headline" id="Public_subroutines">Public subroutines</span></h2>
+<ul>
+<li> <code>dadomm</code>: real operator matrices in dense form
+</li>
+<li> <code>zadomm</code>: complex operator matrices in dense form
+</li>
+<li> <code>dsdomm</code>: real operator matrices in sparse form
+</li>
+</ul>
+<h2><span class="mw-headline" id="Dependencies">Dependencies</span></h2>
+<ul>
+<li> Libraries
+<ul>
+<li> BLAS
+</li>
+<li> LAPACK
+</li>
+<li> BLACS/ScaLAPACK (parallel only)
+</li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Parallelization">Parallelization</span></h2>
+<p>Can be compiled in serial or in parallel with MPI.
+</p>
+<h2><span class="mw-headline" id="Language_interoperability">Language interoperability</span></h2>
+<p>Fortran only.
+</p>
+<h2><span class="mw-headline" id="Compilation">Compilation</span></h2>
+<p>...
+</p>
+<h2><span class="mw-headline" id="Algorithms">Algorithms</span></h2>
+<p>...
+</p>
+<h2><span class="mw-headline" id="Authors">Authors</span></h2>
+<p>Fabiano Corsetti, CIC nanoGUNE, July 2014<br />f.corsetti {at} nanogune.eu
+</p>
+<h2><span class="mw-headline" id="Publications">Publications</span></h2>
+<p>The algorithms and implementation are described in: F. Corsetti, <i>The orbital minimization method for electronic structure calculations with finite-range atomic basis sets</i>, Comput. Phys. Commun. <b>185</b>, 873 (2014). <a rel="nofollow" target="_blank" class="external free" href="http://dx.doi.org/10.1016/j.cpc.2013.12.008">http://dx.doi.org/10.1016/j.cpc.2013.12.008</a>
+</p><p><br />
+</p>
+<hr />
+<p><code>subroutine dadomm( m, n, H, S, e_min, D, ED, eta, C, long_out, init_C, calc_ED, update_P, cholesky_fact, scale_T, T, P )</code>
+</p><p>Density matrix solver specific:
+</p>
+<ul>
+<li> <code>m</code> (input) INTEGER<br />The size of the basis.
+</li>
+<li> <code>n</code> (input) INTEGER<br />The number of occupied eigenstates.
+</li>
+<li> <code>H</code> (input) DOUBLE PRECISION array, dimension (<code>m</code>,<code>m</code>)<br />The Hamiltonian matrix.
+</li>
+<li> <code>S</code> (input, optional) DOUBLE PRECISION array, dimension (<code>m</code>,<code>m</code>)<br />The overlap matrix.
+</li>
+<li> <code>e_min</code> (output) DOUBLE PRECISION<br />The total energy at the end of the minimization (<b>spin degeneracy factor is not included</b>).
+</li>
+<li> <code>D</code> (output) DOUBLE PRECISION array, dimension (<code>m</code>,<code>m</code>)<br />The density matrix.
+</li>
+<li> <code>ED</code> (output, optional) DOUBLE PRECISION array, dimension (<code>m</code>,<code>m</code>)<br />The energy-weighted density matrix.
+</li>
+</ul>
+<p>OMM specific:
+</p>
+<ul>
+<li> <code>eta</code> (input) DOUBLE PRECISION<br />Eigenspectrum shift.
+</li>
+<li> <code>C</code> (input/output) DOUBLE PRECISION array, dimension (<code>m</code>,<code>n</code>)<br />The coefficients matrix for the set of <code>n</code> WFs.
+</li>
+</ul>
+<p>Implementation specific:
+</p>
+<ul>
+<li> <code>long_out</code> (input) LOGICAL<br /><code>T</code>: Verbose output.<br /><code>F</code>: Standard output.
+</li>
+<li> <code>init_C</code> (input) LOGICAL<br /><code>T</code>: <code>C</code> is initialized automatically. Previous contents is immediately overwritten.<br /><code>F</code>: <code>C</code> is already initialized.
+</li>
+<li> <code>calc_ED</code> (input) LOGICAL<br /><code>T</code>: <code>ED</code> is calculated from <code>C</code> provided, and all other output remains unchanged. No minimization is performed.<br /><code>F</code>: The minimization is performed. <code>ED</code> is not calculated.
+</li>
+<li> <code>update_P</code> (input) LOGICAL<br /><code>T</code>: <code>P</code> is updated. Previous contents is immediately overwritten.<br /><code>F</code>: <code>P</code> is not updated.
+</li>
+<li> <code>cholesky_fact</code> (input) LOGICAL<br /><code>T</code>: A Cholesky factorization of the generalized eigenvalue problem is performed.<br /><code>F</code>: No factorization is performed.
+</li>
+<li> <code>scale_T</code> (input) DOUBLE PRECISION<br />Scale of the kinetic energy preconditioning.
+</li>
+<li> <code>rel_tol</code> (input) DOUBLE PRECISION<br />Relative tolerance for the CG minimization.
+</li>
+<li> <code>T</code> (input, optional) DOUBLE PRECISION array, dimension (<code>m</code>,<code>m</code>)<br />The kinetic energy matrix, used for calculating the preconditioner.
+</li>
+<li> <code>P</code> (input, optional) DOUBLE PRECISION array, dimension (<code>m</code>,<code>m</code>)<br />The preconditioner matrix.
+</li>
+</ul>
+<p><br />
+</p>
+<hr />
+<p><code>subroutine zadomm( m, n, H, S, e_min, D, ED, eta, C, long_out, init_C, calc_ED, update_P, cholesky_fact, scale_T, T, P )</code>
+</p><p>All arguments equivalent to <code>dadomm</code>, except for:
+</p>
+<ul>
+<li> <code>H</code> (input) COMPLEX*16 array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>S</code> (input, optional) COMPLEX*16 array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>D</code> (output) COMPLEX*16 array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>ED</code> (output, optional) COMPLEX*16 array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>C</code> (input/output) COMPLEX*16 array, dimension (<code>m</code>,<code>n</code>)<br />
+</li>
+<li> <code>T</code> (input, optional) COMPLEX*16 array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>P</code> (input, optional) COMPLEX*16 array, dimension (<code>m</code>,<code>m</code>)
+</li>
+</ul>
+<p><br />
+</p>
+<hr />
+<p><code>subroutine dsdomm( m, n, H, S, e_min, D, ED, eta, C, long_out, init_C, calc_ED, update_P, scale_T, T, P )</code>
+</p><p>All arguments equivalent to <code>dadomm</code>, except for:
+</p>
+<ul>
+<li> <code>H</code> (input) DOUBLE PRECISION sparse array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>S</code> (input, optional) DOUBLE PRECISION sparse array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>D</code> (output) DOUBLE PRECISION sparse array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>ED</code> (output, optional) DOUBLE PRECISION sparse array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> <code>T</code> (input, optional) DOUBLE PRECISION sparse array, dimension (<code>m</code>,<code>m</code>)
+</li>
+<li> missing <code>cholesky_fact</code>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.033 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 64/1000000
+Preprocessor generated node count: 94/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li><li><a href="../../../../articles/s/o/l/Category:Solvers.html" title="Category:Solvers">Solvers</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/l/i/b/LibOMM.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:LibOMM&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://esl.cecam.org/mediawiki/index.php/LibOMM">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/esl_wiki_logo.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+	     	      <li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+	     	      <li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+	     	      <li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+	     	      <li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>SEARCH</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>TOOLBOX</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 16:59, 15 July 2014 by ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Admin&amp;action=edit&amp;redlink=1" class="new" title="User:Admin (page does not exist)">Admin</a>. Based on work by <a href="../../../../articles/f/a/b/User:Fabiano.corsetti.html" title="User:Fabiano.corsetti">Fabiano Corsetti</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

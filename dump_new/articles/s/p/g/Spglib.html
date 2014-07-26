@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Spglib - ESL - The Electronic Structure Library
+</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body class="mediawiki ltr ns-0 ns-subject page-Spglib">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Spglib</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From ESL</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>spglib</b>: Space Group Library
+</p><p>This library is written in C and it handles crystal symmetries. Supportes functionality includes 
+</p>
+<ul>
+<li> Find symmetry operations
+</li>
+<li> Identify space-group type
+</li>
+<li> Wyckoff position assignment
+</li>
+<li> Refine crystal structure
+</li>
+<li> Search irreducible k-points
+</li>
+<li> Find a primitive cell
+</li>
+</ul>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Authors"><span class="tocnumber">1</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Publications"><span class="tocnumber">2</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#License"><span class="tocnumber">3</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Download"><span class="tocnumber">4</span> <span class="toctext">Download</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Installation"><span class="tocnumber">5</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Prerequisites"><span class="tocnumber">5.1</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Instructions"><span class="tocnumber">5.2</span> <span class="toctext">Instructions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Tests"><span class="tocnumber">5.3</span> <span class="toctext">Tests</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Interfaces"><span class="tocnumber">6</span> <span class="toctext">Interfaces</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Python_extension"><span class="tocnumber">6.1</span> <span class="toctext">Python extension</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Fortran_interface"><span class="tocnumber">6.2</span> <span class="toctext">Fortran interface</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Authors">Authors</span></h2>
+<p>The spglib was written by Atsushi Togo, Yusuke Seto and Dimitar Pashov.
+</p>
+<h2><span class="mw-headline" id="Publications">Publications</span></h2>
+<p>So far no single publications have beeen made with this library although other codes use the functionality and may include this library in thier publications.
+</p>
+<h2><span class="mw-headline" id="License">License</span></h2>
+<p>This library has been released under the New BSD License since version 1.0.
+</p>
+<h2><span class="mw-headline" id="Download">Download</span></h2>
+<p>To get spglib, go to <a rel="nofollow" target="_blank" class="external text" href="http://sourceforge.net/projects/spglib/files/">SourceForge</a>.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Prerequisites">Prerequisites</span></h3>
+<p>There are no required packages besides a working C compiler.
+</p>
+<h3><span class="mw-headline" id="Instructions">Instructions</span></h3>
+<p>If the OpenMP framework is to be used with spglib, the following two export commands need to be entered in the build envoronment:
+</p>
+<ul>
+<li> export LIBS='-lgomp'
+</li>
+<li> export CFLAGS='-fopenmp'
+</li>
+</ul>
+<p>1) untar the archive<br />
+2) cd spglib-$VERSION<br />
+3) ./configure --prefix=$INSTALL_DIR<br />
+4) make &amp;&amp; make install<br />
+</p>
+<h3><span class="mw-headline" id="Tests">Tests</span></h3>
+<p>To use the spglib you need to include the file 'spglib.h' for function definitions and link the executable statically to libsymspg.a or dynamically to libsymspg.so. Usage examples are included in the tar archive in folder examples.
+</p><p>The ruby code symPoscar.rb in test directory reads a VASP POSCAR formatted file and finds the space-group type. The -l option refines a slightly distorted structure within tolerance spacified with the -s option. The -o option gives the symmetry operations of the input structure.
+</p>
+<pre> ruby symPoscar.rb POSCAR -s 0.1 -o -l
+</pre>
+<p>How to compile this test is found in the README file.
+</p>
+<h2><span class="mw-headline" id="Interfaces">Interfaces</span></h2>
+<h3><span class="mw-headline" id="Python_extension">Python extension</span></h3>
+<p>A Python extension for ASE is prepared in the python/ase directory. See <a rel="nofollow" target="_blank" class="external text" href="http://spglib.sourceforge.net/pyspglibForASE/">http://spglib.sourceforge.net/pyspglibForASE</a> for more.
+</p>
+<h3><span class="mw-headline" id="Fortran_interface">Fortran interface</span></h3>
+<p>Fortran interface spglib_f08.f90 is found in example directory. This fortran interface is the contribution from Dimitar Pashov. The older versions of gfortran may have compilation problem, and may be solved by applying a patch. See <a rel="nofollow" target="_blank" class="external text" href="http://sourceforge.net/p/spglib/mailman/message/32181136/">http://sourceforge.net/p/spglib/mailman/message/32181136</a>. spglib_f.c is obsolete and is not recommended to use.
+</p><p>For further documentation go to the sourceforge project home page at <a rel="nofollow" target="_blank" class="external text" href="http://spglib.sf.net">spglib.sf.net</a>.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.018 seconds
+Real time usage: 0.018 seconds
+Preprocessor visited node count: 47/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://esl.cecam.org/mediawiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/e/s/l/Category:ESL_entries.html" title="Category:ESL entries">ESL entries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Libraries&amp;action=edit&amp;redlink=1" class="new" title="Category:Libraries (page does not exist)">Libraries</a></li><li><a href="http://esl.cecam.org/mediawiki/index.php?title=Category:Symmetry&amp;action=edit&amp;redlink=1" class="new" title="Category:Symmetry (page does not exist)">Symmetry</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/p/g/Spglib.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:Spglib&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://esl.cecam.org/mediawiki/index.php/Spglib">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/esl_wiki_logo.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+	     	      <li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+	     	      <li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+	     	      <li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+	     	      <li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>SEARCH</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>TOOLBOX</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 15:35, 11 July 2014 by ESL user <a href="../../../../articles/a/l/e/User:Alexandr.fonari.html" title="User:Alexandr.fonari">Alexandr.fonari</a>. Based on work by <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Jank&amp;action=edit&amp;redlink=1" class="new" title="User:Jank (page does not exist)">Jan Kloppenburg</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

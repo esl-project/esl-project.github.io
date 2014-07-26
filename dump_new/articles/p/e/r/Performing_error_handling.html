@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Performing error handling - ESL - The Electronic Structure Library
+</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body class="mediawiki ltr ns-0 ns-subject page-Performing_error_handling">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Performing error handling</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From ESL</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The flib library provides routines to handle exceptions and the errors with a mechanism of callback routines (see the file <tt>callbacks.f90</tt>).
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Public_routines"><span class="tocnumber">1</span> <span class="toctext">Public routines</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Usage_and_example"><span class="tocnumber">2</span> <span class="toctext">Usage and example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Minimal_example"><span class="tocnumber">2.1</span> <span class="toctext">Minimal example</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Public_routines">Public routines</span></h1>
+<p>For a complete description of the API of all public routines see the detailed doxygen documentation [LINK TO BE ADDED]. To get access to these routines one has to include the statement which modules to use??? in the header of each subroutine which should be timed.
+</p>
+<h1><span class="mw-headline" id="Usage_and_example">Usage and example</span></h1>
+<p>The error handling consists of two steps. First, one has to define teh error and teh action that has to be taken if this error happens, and in a second step on actually has to trigger the error.
+</p><p>To define an error on can use the routine <tt>f_err_define</tt> as follows:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw3">use</span> dictionary
+ <span class="kw1">call</span> f_err_define<span class="br0">&#40;</span>err_name<span class="sy0">=</span><span class="st0">'ERROR_ONE'</span>, err_msg<span class="sy0">=</span><span class="st0">'This is an error'</span>,err_id<span class="sy0">=</span>error_one<span class="br0">&#41;</span></pre></div></div>
+<p>The argument <tt>err_id</tt> is optional and is the way of having the id of the associated error.
+The module dictionary contains the dictionary type and also the error handling routines.
+</p><p>If this definition is done, one can raise an exception using <tt>f_err_throw</tt> as:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> f_err_throw<span class="br0">&#40;</span><span class="st0">'We raise the error ERROR_ONE'</span>,err_name<span class="sy0">=</span><span class="st0">'ERROR_ONE'</span><span class="br0">&#41;</span></pre></div></div>
+<p>or, if the variable <tt>err_one</tt> does exist in the same scope, as
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">call</span> f_err_throw<span class="br0">&#40;</span><span class="st0">'We raise the error ERROR_ONE'</span>,err_id<span class="sy0">=</span>error_one<span class="br0">&#41;</span></pre></div></div>
+<p>It is also possible to test a condition and raise the error only if this condition is true. This can be done using the function <tt>f_err_raise</tt>:
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">if</span> <span class="br0">&#40;</span>f_err_raise<span class="br0">&#40;</span>x&gt;<span class="nu0">0</span>,<span class="st0">'X has to be strictly positive'</span>,err_name<span class="sy0">=</span><span class="st0">'ERROR_ONE'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>  <span class="kw1">return</span></pre></div></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Minimal_example">Minimal example</span></h2>
+<p>Here is a small example which shows some basic features of the error handling module. Together with the comments it should be self-explanatory. Some more examples can be found in the file <i>errs.f90</i>
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="fortran source-fortran"><pre class="de1"> <span class="kw1">subroutine</span> test_error_handling<span class="br0">&#40;</span><span class="br0">&#41;</span>
+   <span class="kw3">use</span> yaml_output                                                          <span class="co1">!required to write data in the YAML format</span>
+   <span class="kw3">use</span> dictionaries                                                         <span class="co1">!contains the error handling routines</span>
+   <span class="kw3">implicit</span> <span class="kw3">none</span>
+   <span class="kw3">integer</span> <span class="sy0">::</span> <span class="me2">ERR_TEST</span>
+   <span class="kw3">external</span> <span class="sy0">::</span> <span class="me2">abort_test</span>
+&#160;
+   <span class="kw1">call</span> yaml_comment<span class="br0">&#40;</span><span class="st0">'Error Handling Module Test'</span>,hfill<span class="sy0">=</span><span class="st0">'~'</span><span class="br0">&#41;</span>                <span class="co1">!just a comment</span>
+&#160;
+&#160;
+   <span class="kw1">call</span> f_err_define<span class="br0">&#40;</span>err_name<span class="sy0">=</span><span class="st0">'ERR_TEST'</span>,<span class="sy0">&amp;</span>                                  <span class="co1">!define the error</span>
+        err_msg<span class="sy0">=</span><span class="st0">'This is the error message for the error &quot;ERR_TEST&quot; and'</span><span class="sy0">//&amp;</span>
+        <span class="st0">' it is written extensively on purpose to see whether the yaml'</span><span class="sy0">//&amp;</span>
+        <span class="st0">' module can still handle it'</span>,<span class="sy0">&amp;</span>
+        err_action<span class="sy0">=</span><span class="st0">'For this error, contact the routine developer'</span>,<span class="sy0">&amp;</span>
+        err_id<span class="sy0">=</span>ERR_TEST,callback<span class="sy0">=</span>abort_test<span class="br0">&#41;</span>
+&#160;
+   <span class="kw1">call</span> yaml_map<span class="br0">&#40;</span><span class="st0">&quot;Raising the TEST error, errcode&quot;</span>,ERR_TEST<span class="br0">&#41;</span>                <span class="co1">!print that the error will now be triggered</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span>f_err_raise<span class="br0">&#40;</span><span class="kw2">.<span class="me1">true</span>.</span>,<span class="st0">'Extra message added'</span>,err_id<span class="sy0">=</span>ERR_TEST<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span>    <span class="co1">!raise the error and return</span>
+&#160;
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> test_error_handling
+&#160;
+ <span class="kw1">subroutine</span> abort_test<span class="br0">&#40;</span><span class="br0">&#41;</span>                                                    <span class="co1">!routine that will be called when the error is raised</span>
+   <span class="kw3">use</span> yaml_output
+   <span class="kw3">implicit</span> <span class="kw3">none</span>
+   <span class="kw1">call</span> yaml_comment<span class="br0">&#40;</span><span class="st0">'printing error informations'</span>,hfill<span class="sy0">=</span><span class="st0">'_'</span><span class="br0">&#41;</span>               <span class="co1">!just a comment indicating that the error informations will now be written</span>
+   <span class="kw1">call</span> f_dump_last_error<span class="br0">&#40;</span><span class="br0">&#41;</span>                                                 <span class="co1">!print the error information</span>
+ <span class="kw1">end</span> <span class="kw1">subroutine</span> abort_test</pre></div></div>
+<p>This will produce the output
+</p>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="yaml source-yaml"><pre class="de1">  <span class="co1">#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Error Handling Module Test</span><span class="co3">
+ Raising the TEST error, errcode       </span><span class="sy2">: </span> <span class="nu0">22</span>
+  <span class="co1">#_____________________________________________________________ printing error informations</span><span class="co4">
+ ERR_TEST</span>:<span class="co3">
+   Id                                  </span><span class="sy2">: </span><span class="nu0">22</span><span class="co4">
+   Message</span><span class="sy2">:
+</span>     This is the error message for the error <span class="st0">&quot;ERR_TEST&quot;</span> and it is written extensively on
+     purpose to see whether the yaml module can still handle it<span class="co3">
+   Action                              </span><span class="sy2">: </span>For this error, contact the routine developer<span class="co3">
+   Callback Procedure Address          </span><span class="sy2">: </span><span class="nu0">4277190</span><span class="co3">
+ Additional Info                       </span><span class="sy2">: </span>Extra message added</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.062 seconds
+Real time usage: 0.063 seconds
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 136/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks catlinks-allhidden'></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/p/e/r/Performing_error_handling.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http://esl.cecam.org/mediawiki/index.php?title=Talk:Performing_error_handling&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://esl.cecam.org/mediawiki/index.php/Performing_error_handling">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/esl_wiki_logo.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-About-ESL"><a href="../../../../articles/a/b/o/ESL:About.html">About ESL</a></li>
+	     	      <li id="n-Contributing"><a href="../../../../articles/c/o/n/Contributing.html">Contributing</a></li>
+	     	      <li id="n-Credits"><a href="../../../../articles/c/r/e/Credits.html">Credits</a></li>
+	     	      <li id="n-Contact"><a href="../../../../articles/c/o/n/Contact.html">Contact</a></li>
+	     	      <li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>SEARCH</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>TOOLBOX</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 11:04, 10 July 2014 by ESL user <a href="http://esl.cecam.org/mediawiki/index.php?title=User:Stephanm&amp;action=edit&amp;redlink=1" class="new" title="User:Stephanm (page does not exist)">Stephanm</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/ESL:About.html" title="ESL:About">About ESL</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/ESL:General_disclaimer.html" title="ESL:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>
